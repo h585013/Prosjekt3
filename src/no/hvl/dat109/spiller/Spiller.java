@@ -11,6 +11,14 @@ public class Spiller {
 		this.poeng = poeng;
 	}
 
+	 
+	 public void spillerPoeng(Spiller spiller) {
+		 
+		 spiller.getPoeng();
+	 }
+	 
+	 
+	 
 	public String getNavn() {
 		return navn;
 	}
@@ -22,7 +30,7 @@ public class Spiller {
 	public int getPoeng() {
 		return poeng;
 	}
-//commit test 
+
 	public void setPoeng(int poeng) {
 		this.poeng = poeng;
 	}
