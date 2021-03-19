@@ -14,6 +14,8 @@ class RegelTester2 {
 
 	IRegel hus = new Hus();
 	
+	//Hello
+	
 	@Test
 	void testHus() {
 		;
