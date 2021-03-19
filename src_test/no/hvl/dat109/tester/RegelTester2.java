@@ -23,8 +23,8 @@ class RegelTester2 {
 
 	ArrayList<Integer> ErHus = new ArrayList<Integer>();
 	ArrayList<Integer> ErIkkeHus = new ArrayList<Integer>();
-	ArrayList<Integer> ErLitenStraight;
-	ArrayList<Integer> ErIkkeLitenStraight;
+	ArrayList<Integer> ErLitenStraight = new ArrayList<Integer>();
+	ArrayList<Integer> ErIkkeLitenStraight = new ArrayList<Integer>();
 
 	@Test
 	void testHus() {
