@@ -11,8 +11,15 @@ import no.hvl.dat109.regler.Hus;
 import no.hvl.dat109.regler.IRegel;
 import no.hvl.dat109.regler.LitenStraight;
 import no.hvl.dat109.regler.Sjanse;
+import no.hvl.dat109.regler.StorStraight;
 import no.hvl.dat109.regler.ToPar;
+import no.hvl.dat109.regler.TreLike;
 
+/**
+ * 
+ * @author vilde hagtvedt
+ *
+ */
 class RegelTester2 {
 
 	// Tester hus
@@ -21,6 +28,8 @@ class RegelTester2 {
 	IRegel litenStraight = new LitenStraight();
 	IRegel sjanse = new Sjanse();
 	IRegel toPar = new ToPar();
+	IRegel storStraight = new StorStraight();
+	IRegel erTreLike = new TreLike();
 
 	ArrayList<Integer> ErHus = new ArrayList<Integer>();
 	ArrayList<Integer> ErIkkeHus = new ArrayList<Integer>();
@@ -29,7 +38,10 @@ class RegelTester2 {
 	ArrayList<Integer> Sjanse = new ArrayList<Integer>();
 	ArrayList<Integer> ErToPar = new ArrayList<Integer>();
 	ArrayList<Integer> ErIkkeToPar = new ArrayList<Integer>();
-
+	ArrayList<Integer> ErStorStraight = new ArrayList<Integer>();
+	ArrayList<Integer> ErIkkeStorStraight = new ArrayList<Integer>();
+	ArrayList<Integer> ErTreLike = new ArrayList<Integer>();
+	ArrayList<Integer> ErIkkeTreLike = new ArrayList<Integer>();
 	
 	@Test
 	void testHus() {
@@ -115,4 +127,51 @@ class RegelTester2 {
 		
 	}
 
+	
+	@Test
+	void testStorStraight() {
+		ErStorStraight.add(2);
+		ErStorStraight.add(3);
+		ErStorStraight.add(4);
+		ErStorStraight.add(5);
+		ErStorStraight.add(6);
+
+		
+		int TestErStorStraight = storStraight.resolve(ErStorStraight);
+		assertEquals(20, TestErStorStraight);
+		
+		ErIkkeStorStraight.add(2);
+		ErIkkeStorStraight.add(3);
+		ErIkkeStorStraight.add(4);
+		ErIkkeStorStraight.add(4);
+		ErIkkeStorStraight.add(6);
+		
+		int TestErIkkeStorStraight = storStraight.resolve(ErIkkeStorStraight);
+		assertEquals(0, TestErIkkeStorStraight);
+		
+	}
+	
+	@Test
+	void testTreLike() {
+		ErTreLike.add(2);
+		ErTreLike.add(2);
+		ErTreLike.add(2);
+		ErTreLike.add(5);
+		ErTreLike.add(6);
+		
+		int TestErTreLike = erTreLike.resolve(ErTreLike);
+		assertEquals(6, TestErTreLike);
+		
+		ErIkkeTreLike.add(2);
+		ErIkkeTreLike.add(3);
+		ErIkkeTreLike.add(4);
+		ErIkkeTreLike.add(4);
+		ErIkkeTreLike.add(6);
+		
+		int TestErIkkeTreLike = erTreLike.resolve(ErIkkeTreLike);
+		assertEquals(0, TestErIkkeTreLike);
+	}
+	
+	
+	
 }
