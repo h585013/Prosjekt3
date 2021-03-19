@@ -1,8 +1,6 @@
 package no.hvl.dat109.tester;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.jupiter.api.Test;
 import no.hvl.dat109.regler.Hus;
 import no.hvl.dat109.regler.IRegel;
@@ -31,11 +29,8 @@ class RegelTester2 {
 		ErHus.add(2);
 		ErHus.add(2);
 		ErHus.add(2);
-		//haha
 		ErIkkeHus.add(2);
 		
-		
-
 		int ErHus = hus.resolve((ArrayList<Integer>) terningKast);
 		assertEquals(19, ErHus);
 
