@@ -1,5 +1,6 @@
 package no.hvl.dat109.tester;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -29,7 +30,6 @@ class RegelTester2 {
 	ArrayList<Integer> ErToPar = new ArrayList<Integer>();
 	ArrayList<Integer> ErIkkeToPar = new ArrayList<Integer>();
 
-	
 	
 	@Test
 	void testHus() {
