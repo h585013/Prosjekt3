@@ -17,8 +17,22 @@ class RegelTester2 {
 	//Hello
 	
 	@Test
-	void testHus() {
+	void testLitenStraigth() {
 		;
 	}
+	
+
+	@Test
+	void testSjanse() {
+		;
+	}
+	
+
+	@Test
+	void testToPar() {
+		;
+	}
+
+	
 
 }
