@@ -2,7 +2,7 @@ package no.hvl.dat109.spiller;
 /**
  * 
  * @author Lotte
- *
+ * funker dette 
  */
 public class Spiller {
 
