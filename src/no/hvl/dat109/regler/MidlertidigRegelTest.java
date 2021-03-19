@@ -93,7 +93,7 @@ public class MidlertidigRegelTest {
 	}
 
 	@Test
-	void fårBonusPoeng() {
+	void faarBonusPoeng() {
 
 		// Legger til tidligere poengsum som tilsammen blir 41 eller mer.
 
