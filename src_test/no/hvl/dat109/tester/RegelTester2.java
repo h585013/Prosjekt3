@@ -14,6 +14,7 @@ import no.hvl.dat109.regler.Sjanse;
 import no.hvl.dat109.regler.StorStraight;
 import no.hvl.dat109.regler.ToPar;
 import no.hvl.dat109.regler.TreLike;
+import no.hvl.dat109.regler.Yatzy;
 
 /**
  * 
@@ -22,15 +23,15 @@ import no.hvl.dat109.regler.TreLike;
  */
 class RegelTester2 {
 
-	// Tester hus
-
 	IRegel hus = new Hus();
 	IRegel litenStraight = new LitenStraight();
 	IRegel sjanse = new Sjanse();
 	IRegel toPar = new ToPar();
 	IRegel storStraight = new StorStraight();
 	IRegel erTreLike = new TreLike();
-
+	IRegel yatzy = new Yatzy();
+	
+	
 	ArrayList<Integer> ErHus = new ArrayList<Integer>();
 	ArrayList<Integer> ErIkkeHus = new ArrayList<Integer>();
 	ArrayList<Integer> ErLitenStraight = new ArrayList<Integer>();
@@ -42,6 +43,8 @@ class RegelTester2 {
 	ArrayList<Integer> ErIkkeStorStraight = new ArrayList<Integer>();
 	ArrayList<Integer> ErTreLike = new ArrayList<Integer>();
 	ArrayList<Integer> ErIkkeTreLike = new ArrayList<Integer>();
+	ArrayList<Integer> ErYatzy = new ArrayList<Integer>();
+	ArrayList<Integer> ErIkkeYatzy = new ArrayList<Integer>();
 	
 	@Test
 	void testHus() {
@@ -170,6 +173,27 @@ class RegelTester2 {
 		
 		int TestErIkkeTreLike = erTreLike.resolve(ErIkkeTreLike);
 		assertEquals(0, TestErIkkeTreLike);
+	}
+	
+	@Test
+	void testYatzy() {
+		ErYatzy.add(2);
+		ErYatzy.add(2);
+		ErYatzy.add(2);
+		ErYatzy.add(2);
+		ErYatzy.add(2);
+		
+		int TestErYatzy = yatzy.resolve(ErYatzy);
+		assertEquals(50, TestErYatzy);
+		
+		ErIkkeYatzy.add(2);
+		ErIkkeYatzy.add(3);
+		ErIkkeYatzy.add(4);
+		ErIkkeYatzy.add(4);
+		ErIkkeYatzy.add(6);
+		
+		int TestErIkkeYatzy = yatzy.resolve(ErIkkeYatzy);
+		assertEquals(0, TestErIkkeYatzy);
 	}
 	
 	
