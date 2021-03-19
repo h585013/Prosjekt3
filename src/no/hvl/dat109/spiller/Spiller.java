@@ -34,9 +34,9 @@ public class Spiller {
  * Metode for å sette score til spiller
  * @param spiller
  */
-	public void spillerScore(Spiller spiller) {
+	public void spillerScore(Spiller spiller, int score) {
 		 
-		 spiller.getScore();
+		 spiller.setScore(score);
 	 }
 	 
 	 
