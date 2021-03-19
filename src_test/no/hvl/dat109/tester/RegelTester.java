@@ -22,5 +22,6 @@ public void testBonuspoeng() {
 	assertEquals(50,bonuspoeng.resolve(størreEnn41,6));
 	assertEquals(50,bonuspoeng.resolve(lik41, 6));
 }
+//comiit test vilde
 
 }
