@@ -102,7 +102,7 @@ class RegelTester2 {
 		ErToPar.add(5);
 		
 		int TestErToPar = toPar.resolve(ErToPar);
-		assertEquals(12, TestErToPar);
+		assertEquals(20, TestErToPar);
 		
 		ErIkkeToPar.add(1);
 		ErIkkeToPar.add(4);
