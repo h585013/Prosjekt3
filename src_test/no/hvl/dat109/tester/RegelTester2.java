@@ -19,15 +19,22 @@ class RegelTester2 {
 	IRegel sjanse = new Sjanse();
 	IRegel toPar = new ToPar();
 
-	List<Integer> terningKast = new ArrayList<Integer>();
+	List<Integer> ErHus = new ArrayList<Integer>();
+	List<Integer> ErIkkeHus = new ArrayList<Integer>();
+	List<Integer> ErLitenStraight = new ArrayList<Integer>();
+	List<Integer> ErIkkeLitenStraight = new ArrayList<Integer>();
 
 	@Test
 	void testHus() {
-		terningKast.add(2);
-		terningKast.add(2);
-		terningKast.add(5);
-		terningKast.add(5);
-		terningKast.add(5);
+		ErHus.add(2);
+		ErHus.add(2);
+		ErHus.add(2);
+		ErHus.add(2);
+		ErHus.add(2);
+		//haha
+		ErIkkeHus.add(2);
+		
+		
 
 		int ErHus = hus.resolve((ArrayList<Integer>) terningKast);
 		assertEquals(19, ErHus);
@@ -36,8 +43,9 @@ class RegelTester2 {
 
 	@Test
 	void testLitenStraigth() {
-		terningKast.add(2);
-		terningKast.add(3);
+		
+		ErLitenStraight.add(5);
+		ErIkkeLitenStraight.add(5);
 	}
 
 	@Test
