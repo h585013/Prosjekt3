@@ -26,13 +26,6 @@ public class MidlertidigRegelTest {
 	private int e3;
 	private int e4;
 	
-	@BeforeAll
-	void start() {
-		
-		Regler r = new Regler();
-		regler = r.getRegler();
-		
-	}
 
 	@BeforeEach
 	void setup() {
@@ -46,6 +39,10 @@ public class MidlertidigRegelTest {
 	
 	@Test
 	void riktigSum1ere() {
+		
+		// rundenr = 1;
+		regel = new RundeEnTilSeks(1);
+		
 
 		// Legger til to enere, og sjekker at den returnerer 2 som sum.
 
@@ -54,13 +51,18 @@ public class MidlertidigRegelTest {
 		terningsTrill.add(3);
 		terningsTrill.add(1);
 		terningsTrill.add(5);
+		
 
-		assertEquals(2, regler.get(1).resolve(terningsTrill));
+		assertEquals(2, regel.resolve(terningsTrill));
 
 	}
 
 	@Test
 	void riktigSum6ere() {
+		
+		// rundenr = 6;
+		regel = new RundeEnTilSeks(6);
+				
 
 		// Legger til 0 6ere og sjekker at den returnerer 0 som sum.
 
@@ -69,8 +71,8 @@ public class MidlertidigRegelTest {
 		terningsTrill.add(3);
 		terningsTrill.add(1);
 		terningsTrill.add(5);
-
-		assertEquals(0, regler.get(6).resolve(terningsTrill));
+		
+		assertEquals(0, regel.resolve(terningsTrill));
 	}
 
 	//Tester for å sjekke om man får bonuspoeng eller ei
