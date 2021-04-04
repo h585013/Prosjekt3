@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Venterom</title>
+<!-- Fra https://purecss.io/ -->
+<link rel="stylesheet"
+	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 </head>
 <body>
-	<h1>Venterom</h1>
-	<p>Venter på spillere...</p>
+	<h1 style="text-align: center">Venterom</h1>
+	<p style="text-align: center">Venter på spillere...</p>
 	
 </body>
 </html>
