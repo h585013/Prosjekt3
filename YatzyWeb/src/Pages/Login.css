@@ -1,0 +1,27 @@
+
+body{
+    background-image: linear-gradient(#FFFFFF, #E7F1FC);
+}
+
+.button{
+    padding: 6px 50px;
+    font-family: Agency FB;
+    font-size: 40;
+}
+
+.primaryButton{
+    background-color: #0C85C3;
+    color:#FFFFFF;
+    border:none;
+}
+
+.secondaryButton{
+    background-color: #EBF3FC;
+    color:#0C85C3;
+    border-color:#0C85C3;   
+}
+
+.yatzy{
+    font-size:100px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
