@@ -76,7 +76,7 @@ public class Yatzy {
 					// beregn sum til spilleren
 					// beregn bonus til spilleren
 				}
-
+				// Hei
 			}
 			if (rundenr == 6) {
 				// skriver ut poengsummene til hver spiller
