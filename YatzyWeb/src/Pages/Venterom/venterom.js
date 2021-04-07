@@ -1,3 +1,6 @@
+import './venterom.css';
+import './venterom.jsp';
+
 
 const venterom = () => {
 
