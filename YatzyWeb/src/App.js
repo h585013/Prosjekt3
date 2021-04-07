@@ -25,23 +25,4 @@ const App = () => {
 }
 
 
-  
-
-const NavBar =() => {
-  return(
-
-    <Grid container justify="flex-start" spacing={5}>
-      <Grid item>
-        <Link to ="/">Home</Link>
-      </Grid>
-
-      <Grid item>
-        <Link to ="/about">About us</Link>
-      </Grid>
-      
-
-    </Grid>
-  )
-}
-
 export default App;

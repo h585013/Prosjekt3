@@ -5,13 +5,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "dat109oblig3", name = "bruker")
+@Table(schema = "public", name = "spiller")
 public class Bruker {
 
 	@Id
 	private String brukernavn;
 
-	private String epost;
+	private String email;
 
 	// TODO: er faktisk ikke hashet / saltet enda. 100% i klartekst. 
 	private String passord;
@@ -24,7 +24,7 @@ public class Bruker {
 
 	public Bruker(String brukernavn, String epost, String passord) {
 		this.brukernavn = brukernavn;
-		this.epost = epost;
+		email = epost;
 		this.passord = passord;
 		
 	}
@@ -38,11 +38,11 @@ public class Bruker {
 	}
 
 	public String getEpost() {
-		return epost;
+		return email;
 	}
 
 	public void setEpost(String epost) {
-		this.epost = epost;
+		email = epost;
 	}
 	
 	public String getPassord() {
