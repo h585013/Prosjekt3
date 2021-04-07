@@ -33,6 +33,7 @@ public class VenteromServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Reload knapp
 		// sende videre spillid 
+		
 	
 	}
 
