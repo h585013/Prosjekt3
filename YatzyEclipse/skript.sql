@@ -2,7 +2,7 @@
 DROP SCHEMA IF EXISTS yatzy  CASCADE;
 CREATE SCHEMA yatzy;
 SET search_path = yatzy;
-
+--test
 CREATE TABLE Resultat 
 (
    spillID ..., --Finn ut
