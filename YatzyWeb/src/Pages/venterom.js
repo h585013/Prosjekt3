@@ -62,3 +62,25 @@ for (var i in Spillere) {
 function refresh() {
   window .location.reload();
 }
+
+
+const handleRegistrationChange = (event) =>{
+
+  // Ta brukernavn osv, poste til database.
+  var payload = {
+      "brukernavn" : brukernavn,
+      "epost" : epost,
+      "passord" : passord
+   //   "passordRepeat" : passordRepeat
+  }
+
+  fetch("http://localhost:8080/Prosjekt3/registrer", {
+      method: "POST", 
+      body: JSON.stringify(payload)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+    });
+
+}
+
+
