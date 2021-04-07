@@ -44,6 +44,8 @@ public class RegistrationServlet extends HttpServlet {
 		Bruker brukerRegistrering = objectMapper.readValue(requestData, Bruker.class);
 		
 		dao.leggTilBruker(brukerRegistrering);
+		
+		Bruker b = dao.finnBruker(brukerRegistrering.getBrukernavn());
 
 		doGet(request, response);
 	}
