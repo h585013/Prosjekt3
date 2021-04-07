@@ -1,7 +1,7 @@
 
 import Login from './Pages/Login';
 import Registration from './Pages/Registration';
-import venterom from './Pages/venterom';
+import venterom from './Pages/Venterom/venterom';
 import React, { Component } from 'react';
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import { Container, Grid } from '@material-ui/core';

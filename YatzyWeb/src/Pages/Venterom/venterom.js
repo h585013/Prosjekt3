@@ -1,10 +1,9 @@
 
-/**
- * Laster inn -> Venter på spillere
- */
-function loader() {
+const venterom = () => {
 
-}
+  return (<p>yatzy</p>)
+
+  /** 
 
 function printUtSpillere (x ) {
 var Spillere = ["JanW", "VilH", "BalT", "Reggis", "Anus", "Ema"];
@@ -46,10 +45,10 @@ for (var i in Spillere) {
     tekst += "<button id='kast' class='posisjon5Knapp kastutbutton kastutbutton:hover' value='Spiller5' onclick='kastUtSpiller()'>Kast ut</button>"
   }
 }
-  document.getElementById("print").innerHTML += tekst;
+   document.getElementById("print").innerHTML += tekst;
   
 }
-
+**/
 
 /**
  * Kan kaste ut spiller hvis oenskelig
@@ -70,7 +69,10 @@ const hentSpillere = (event) =>{
     }).then(res => {
       console.log("Request complete! response:", res);
     });
+    
+}
 
 }
 
 
+export default venterom;
