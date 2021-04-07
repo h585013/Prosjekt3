@@ -50,7 +50,7 @@ public class Yatzy {
 		for (int i = 0; i < antallSpillere; i++) {
 			System.out.println("Spiller navn: ");
 			String navn = sc.next();
-			spillere.add(new Spiller());//sc.next())); // Antar at dette er en konstruktør
+			//spillere.add(new Spiller());//sc.next())); // Antar at dette er en konstruktør
 			// Spør om eventuelt mer informasjon som er nødvendig for å opprette spiller objekt
 		}
 
