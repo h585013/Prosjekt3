@@ -66,7 +66,7 @@ function refresh() {
 
 const handleRegistrationChange = (event) =>{
 
-  fetch("http://localhost:8080/Prosjekt3/registrer", {
+  fetch("http://localhost:8080/Prosjekt3/yatzyEclipse/Registrer", {
       method: "GET", 
       body: JSON.stringify(payload)
     }).then(res => {
