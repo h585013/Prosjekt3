@@ -64,9 +64,9 @@ function refresh() {
 }
 
 
-const handleRegistrationChange = (event) =>{
+const hentSpillere = (event) =>{
 
-  fetch("http://localhost:8080/Prosjekt3/yatzyEclipse/Registrer", {
+  fetch("http://localhost:8080/Prosjekt3/VenteromServlet", {
       method: "GET", 
       body: JSON.stringify(payload)
     }).then(res => {
