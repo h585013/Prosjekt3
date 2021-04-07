@@ -1,6 +1,7 @@
 
 import Login from './Pages/Login';
 import Registration from './Pages/Registration';
+import venterom from './Pages/venterom';
 import React, { Component } from 'react';
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import { Container, Grid } from '@material-ui/core';
@@ -15,6 +16,7 @@ const App = () => {
      <Switch>
         <Route path="/" component={Login} exact />
         <Route path="/registration" component ={Registration}/>
+        <Route path="/venterom" component ={venterom}/>
       </Switch>
 
     </main>

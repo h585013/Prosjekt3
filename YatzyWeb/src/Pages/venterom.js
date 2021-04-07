@@ -65,10 +65,8 @@ function refresh() {
 
 
 const hentSpillere = (event) =>{
-
   fetch("http://localhost:8080/Prosjekt3/VenteromServlet", {
       method: "GET", 
-      body: JSON.stringify(payload)
     }).then(res => {
       console.log("Request complete! response:", res);
     });
