@@ -10,7 +10,6 @@ pageEncoding="ISO-8859-1"%>
 </header>
 </div>
 <body>
-    <script>{hentSpillere}</script>
    <!-- <script>window.setInterval('refresh()', 3000); </script>   -->
     <div class="navbar">
         <a class="active" href="#">EXIT</a>

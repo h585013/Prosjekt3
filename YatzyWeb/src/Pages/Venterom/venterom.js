@@ -1,7 +1,13 @@
+import './venterom.css';
+import './venterom.jsp';
+
+
 
 const venterom = () => {
 
-  return (<p>yatzy</p>)
+  return (<p>Halla</p>);
+ 
+
 
   /** 
 
@@ -61,6 +67,7 @@ for (var i in Spillere) {
 function refresh() {
   window .location.reload();
 }
+
 
 
 const hentSpillere = (event) =>{

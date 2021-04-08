@@ -51,7 +51,7 @@ public class BrukerDAO {
 	}
 
 	public List<Spiller> hentAlle() {
-		return em.createQuery("select s from Spiller d", Spiller.class).getResultList();
+		return em.createQuery("select s from Spiller s", Spiller.class).getResultList();
 	}
 
 }

@@ -1,4 +1,4 @@
-package no.hvl.dat109.servlets;
+package VenteromServlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,32 +9,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import no.hvl.dat109.dao.BrukerDAO;
-import no.hvl.dat109.spiller.Spiller;
+import DAOogKlasse.Spiller;
+import DAOogKlasse.SpillerDAO;
 
-/**
- * Servlet implementation class VenteromServlet
- */
 @WebServlet("/VenteromServlet")
 public class VenteromServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
-	BrukerDAO dao = new BrukerDAO();
+	private SpillerDAO dao;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+
+		
 		List<Spiller> spillere = dao.hentAlle();
-		request.setAttribute("spillerListe", spillere);	
-		request.getRequestDispatcher("/jsp/venterom.jsp").forward(request, response);
+		request.setAttribute("spillerListe", spillere);
+		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Reload knapp
-		// sende videre spillid 
-		
+
 	
 	}
 
