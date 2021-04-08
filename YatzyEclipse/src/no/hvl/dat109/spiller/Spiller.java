@@ -1,6 +1,9 @@
 package no.hvl.dat109.spiller;
 
 import javax.persistence.Entity;
+
+
+
 import javax.persistence.*;
 
 /**
@@ -12,14 +15,16 @@ import javax.persistence.*;
 @Table(schema = "public", name="spiller")
 public class Spiller {
 
-	
+	@Id
+	@OneToMany (mappedBy = "Resultat")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int spillerId;
 	private String navn;
 	private int score;
 	private String passord;
 	private String email;
 	private String brukernavn;
-	@Id
-	private int spillerId;
+	
 	
 	
 

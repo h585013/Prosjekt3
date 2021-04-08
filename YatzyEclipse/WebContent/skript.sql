@@ -27,7 +27,7 @@ CREATE TABLE Resultat
    totalSum INTEGER, 
 
    FOREIGN KEY(spillID) FROM ... , --Finn ut
-   FOREIGN KEY(spillerId) FROM ... , --FInn ut :) 
+   FOREIGN KEY(spillerId) FROM Spiller (spillerId) ,
    PRIMARY KEY (spillID, spillerId)
 );
 
@@ -38,9 +38,15 @@ CREATE TABLE Spiller
 	score INTEGER, 
 	passord varchar, 
 	email varchar, 
-	
-	
-)
+	brukernavn varchar
+);
+
+CREATE TABLE Spill
+( -- trenger vi dette?
+);
+
+
+
 
 
 

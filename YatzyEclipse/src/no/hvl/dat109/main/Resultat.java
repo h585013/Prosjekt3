@@ -1,8 +1,10 @@
 package no.hvl.dat109.main;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+
+
 
 @Entity
 @IdClass(ResultatID.class)
@@ -10,6 +12,8 @@ public class Resultat {
 	@Id
 	private int spillID;
 	@Id
+	@ManyToOne
+	@JoinColumn(name = "spillerId", referencedColumnName = "spillerId")
 	private int spillerID;
 
 	private int enere;
