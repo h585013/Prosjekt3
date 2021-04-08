@@ -16,5 +16,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/vilde/OneDrive/Skrivebord/Skole/apache-tomee-plume-8.0.4/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vilde/OneDrive/Skrivebord/Skole/apache-tomee-plume-8.0.4/lib/jsp-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
