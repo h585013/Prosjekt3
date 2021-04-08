@@ -16,8 +16,8 @@ pageEncoding="ISO-8859-1"%>
         <a class="active" href="#" onclick="location.reload();" style="z-index: 3;">REFRESH</a>
     </div>
     <div class="terning">
-        <img style="width: 5%; height: auto; left: 33%; position: absolute; top: 12px; z-index: 1" src="css/vippng.com-white-dice-png-986406.png">
-        <img style="width: 5%; height: auto; right: 34%; position: absolute; top: 12px; z-index: 1;" src="css/vippng.com-white-dice-png-986406.png">
+        <img style="width: 5%; height: auto; left: 33%; position: absolute; top: 12px; z-index: 1" src="WEB-INF/css/vippng.com-white-dice-png-986406.png">
+        <img style="width: 5%; height: auto; right: 34%; position: absolute; top: 12px; z-index: 1;" src="WEB-INF/css/vippng.com-white-dice-png-986406.png">
     </div>
     <div class="myDiv">
         <h1>Y  A  T  Z  Y</h1>
