@@ -40,14 +40,12 @@ const Registration = () => {
         fetch("http://localhost:8080/Prosjekt3/registrer", {
             method: "POST", 
             body: JSON.stringify(payload)
-          }).then(res => {
+          }).then(res => {            
             if(res.ok){
-                history.push("/");
-            }
-          });
+                window.location.assign("http://localhost:8080/Prosjekt3/Forside")
+          }});
 
-
-
+        window.location.assign("http://localhost:8080/Prosjekt3/Forside")
     }
 
 //Få en token JWT token 

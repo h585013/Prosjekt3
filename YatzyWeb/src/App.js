@@ -18,6 +18,7 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/registration" component ={Registration}/>
         <Route path="/venterom" component ={venterom}/>
+        
       </Switch>
 
     </main>
