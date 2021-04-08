@@ -43,11 +43,19 @@ public class RegistrationServlet extends HttpServlet {
 		ObjectMapper objectMapper = new ObjectMapper();
 		Bruker brukerRegistrering = objectMapper.readValue(requestData, Bruker.class);
 		
-		dao.leggTilBruker(brukerRegistrering);
 		
-		Bruker b = dao.finnBruker(brukerRegistrering.getBrukernavn());
+		if(dao.leggTilBruker(brukerRegistrering)){
+			//Om det gikk greit :)
+			response.setStatus(HttpServletResponse.SC_CREATED); 
+		}else {
+			// Om det ikke gikk greit :(
+			response.setStatus(HttpServletResponse.SC_CONFLICT); 
+		}
 
-		doGet(request, response);
+		
+		
+		
+		
 	}
 
 }
