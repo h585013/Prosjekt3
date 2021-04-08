@@ -20,6 +20,10 @@ public class Spiller {
 	private String brukernavn;
 	@Id
 	private int spillerId;
+	
+	
+
+	
 /**
  * Konstruktør
  * @param navn
@@ -29,7 +33,6 @@ public class Spiller {
  * @param brukernavn
  * @param spillerId
  */
-	
 	
 	 public Spiller(String navn, int score, String passord, String email, String brukernavn, int spillerId) {
 		this.navn = navn;
