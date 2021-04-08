@@ -1,4 +1,9 @@
 
+
+
+
+
+
 /**
  * Laster inn -> Venter på spillere
  */
@@ -6,20 +11,21 @@ function loader() {
 
 }
 
-function printUtSpillere (x ) {
-var Spillere = ["JanW", "VilH", "BalT", "Reggis", "Anus", "Ema"];
+
+function printUtSpillere (x, i) {
+var Spiller = x;
 var tekst = "";
-for (var i in Spillere) {
   if (i ==  0) {
     tekst += "<p class='posisjon0'>";
     tekst += Spillere[i];
+    tekst += x;
     tekst += "</p>";
     }
   if (i == 1) {
     tekst += "<p class='posisjon1'>";
     tekst += Spillere[i];
     tekst += "</p>";
-    tekst += "<button id='kast' class='posisjon1Knapp kastutbutton kastutbutton:hover' value='Spiller1' onclick='kastUtSpiller()'>Kast ut</button>"
+    tekst += "<button id='kast' class='posisjon1Knapp kastutbutton kastutbutton:hover' value='Spiller1' onclick='kastUtSpiller()'>Kast ut</button>";
   }
   if (i == 2) {
     tekst += "<p class='posisjon2'>";
@@ -45,7 +51,7 @@ for (var i in Spillere) {
     tekst += "</p>";
     tekst += "<button id='kast' class='posisjon5Knapp kastutbutton kastutbutton:hover' value='Spiller5' onclick='kastUtSpiller()'>Kast ut</button>"
   }
-}
+
   document.getElementById("print").innerHTML += tekst;
   
 }
@@ -63,22 +69,5 @@ function refresh() {
   window .location.reload();
 }
 
-function mp_GetData() {
-  $.ajax({
-    type: "POST",
-    url: "Default.aspx/GetData",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-    error: function (jqXHR, sStatus, sErrorThrown) {
-      alert( 'data:  ' + sErrorThrown);
-      alert( 'Get Data Error:  ' + sStatus);
-  },
-  success: function (data) {
-      $("#oTable").empty();
-      var oTable = data.d;
-      for (i = 0; i <= oTable.Rows.length - 1; i++) {
-          $("#oTable").append("<tr><td>" + oTable.Rows[i].lTaskID + "</td><td>" + oTable.Rows[i].sDescription + "</td><td>" + new Date(parseInt(oTable.Rows[i].dtStartDate.substr(6))) + "</td><td>" + new Date(parseInt(oTable.Rows[i].dtEndDate.substr(6))) + "</td></tr>");
-      }
-  }
-});
-}
+
+
