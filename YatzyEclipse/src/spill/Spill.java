@@ -1,10 +1,35 @@
 package no.hvl.dat109.spill;
+**
+* Spill entiteten innholder en unik id,et spillnavn valgt av spiller når
+* spillet opprettes. En string med brukernavn til den som opprettet Spillet, og
+* en liste av deltagere.
+* @author vilde
+*/
 @Entity
-@Table(shema="public", name="spiller")
+@Table(schema = "public", name = "spiller")
 public class Spill {
-@Id
-@GeneratedValue
-private Long id;
-private Stirng spillNavn;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String spillNavn;
+	private String admin;
 
+	@OneToMany(mappedBy = "spiller")
+	private List<Spiller> spillere;
+
+	/**
+	 * Konstruktør
+	 * 
+	 * @param id
+	 * @param spillNavn
+	 * @param admin
+	 * 
+	 */
+	public Spill(String spillNavn, String admin) {
+
+		
+		this.spillNavn = spillNavn;
+		this.admin = admin;
+
+	}
 }

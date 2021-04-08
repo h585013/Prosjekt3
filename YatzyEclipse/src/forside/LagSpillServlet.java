@@ -30,12 +30,18 @@ public class LagSpillServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesjon = request.getSession();
+		//Vet ikke hvordan emma lagrer bruker, men tenker sesjonen?-vilde
+		String brukernavn= (String) sesjon.getAttribute("brukernavn");
+		
+		String spillNavn= request.getParameter("spillNavn");
+				
+		String spillNavnEscaped= StringEscapeUtils.escapeHtml4(request.getParameter("spillNavn"));
+		Spill spill= new Spill(spillNavn,brukernavn);
 		if (sesjon != null) {
 			sesjon.invalidate();
 		}
-		sesjon = request.getSession(true);
-		String handling= request.getParameter("spillNavn");	
-	    
-	}
+		sesjon = request.getSession(true);		
+		
+	}	
 
 }
