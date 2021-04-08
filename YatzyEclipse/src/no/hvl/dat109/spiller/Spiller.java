@@ -1,11 +1,18 @@
 package no.hvl.dat109.spiller;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * 
  * @author Lotte
  * funker dette 
  */
+@Entity
+@Table(schema = "public", name="spiller")
 public class Spiller {
 
+	@Id
 	private String navn;
 	 private int score;
 	 private String passord;
