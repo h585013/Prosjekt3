@@ -5,8 +5,8 @@ SET search_path = yatzy;
 --test thea
 CREATE TABLE Resultat 
 (
-   spillID ..., --Finn ut
-   spillerId ..., --Finn ut 
+   spillID INTEGER, --Finn ut
+   spillerId INTEGER, --Finn ut 
    enere INTEGER, 
    toere INTEGER,    
    treere INTEGER, 
@@ -29,8 +29,18 @@ CREATE TABLE Resultat
    FOREIGN KEY(spillID) FROM ... , --Finn ut
    FOREIGN KEY(spillerId) FROM ... , --FInn ut :) 
    PRIMARY KEY (spillID, spillerId)
-
 );
+
+CREATE TABLE Spiller
+(	
+	spillerId SERIAL INTEGER,
+	navn varchar,
+	score INTEGER, 
+	passord varchar, 
+	email varchar, 
+	
+	
+)
 
 
 

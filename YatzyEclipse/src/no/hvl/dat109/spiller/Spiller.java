@@ -12,12 +12,13 @@ import javax.persistence.*;
 @Table(schema = "public", name="spiller")
 public class Spiller {
 
-	@Id
+	
 	private String navn;
 	private int score;
 	private String passord;
 	private String email;
 	private String brukernavn;
+	@Id
 	private int spillerId;
 /**
  * Konstruktør
@@ -28,6 +29,8 @@ public class Spiller {
  * @param brukernavn
  * @param spillerId
  */
+	
+	
 	 public Spiller(String navn, int score, String passord, String email, String brukernavn, int spillerId) {
 		this.navn = navn;
 		this.score = score;
@@ -36,6 +39,7 @@ public class Spiller {
 		this.brukernavn = brukernavn;
 		this.spillerId = spillerId;
 	}
+	 
 
 /**
  * Metode for å sette score til spiller
@@ -47,6 +51,10 @@ public class Spiller {
 	 }
 	 
 	 
+public Spiller() {
+}
+
+
 /**
  * Getter og setter for medlemsvariabler  
  * 
