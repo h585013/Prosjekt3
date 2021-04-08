@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/grid';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import {LoginButton, RegisterButton} from './Buttons';
 
+
 const Login = () => {
 
     const [brukernavn, setBrukernavn] = useState("")
@@ -24,7 +25,10 @@ const Login = () => {
             method: "POST", 
             body: JSON.stringify(payload)
           }).then(res => {
-            console.log("Request complete! response:", res);
+              if(res.ok){
+                  console.log("Request complete! response:", res);
+                  window.location.assign("http://localhost:8080/Prosjekt3/Forside")
+              }
           });
 
     }

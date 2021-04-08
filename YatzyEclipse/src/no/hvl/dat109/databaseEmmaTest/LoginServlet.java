@@ -20,48 +20,52 @@ import no.hvl.dat109.dao.BrukerDAO;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private BrukerDAO dao;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String brukernavn = request.getReader().readLine();
 		String passord = request.getReader().readLine();
-		
+
 		Bruker b = dao.finnBruker(brukernavn);
-		if(b==null) {
-			//noe her
-		}else{
-			if(dao.matcherPassord(b, passord)) {
-				System.out.println("passer");
-			}else {
-				
-				//TODO
+		if (b == null) {
+			response.setStatus(HttpServletResponse.SC_CONFLICT);
+		} else {
+			if (dao.matcherPassord(b, passord)) {
+
+				response.setStatus(HttpServletResponse.SC_OK);
+
+			} else {
+
+				response.setStatus(HttpServletResponse.SC_CONFLICT);
 			}
 		}
-		
-		
-		
+
 	}
 
 }

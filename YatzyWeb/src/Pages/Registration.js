@@ -44,8 +44,6 @@ const Registration = () => {
             if(res.ok){
                 window.location.assign("http://localhost:8080/Prosjekt3/Forside")
           }});
-
-        window.location.assign("http://localhost:8080/Prosjekt3/Forside")
     }
 
 //Få en token JWT token 
