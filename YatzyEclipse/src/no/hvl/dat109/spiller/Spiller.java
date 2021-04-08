@@ -1,7 +1,7 @@
 package no.hvl.dat109.spiller;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * 
@@ -14,11 +14,11 @@ public class Spiller {
 
 	@Id
 	private String navn;
-	 private int score;
-	 private String passord;
-	 private String email;
-	 private String brukernavn;
-	 private int spillerId;
+	private int score;
+	private String passord;
+	private String email;
+	private String brukernavn;
+	private int spillerId;
 /**
  * Konstruktør
  * @param navn
