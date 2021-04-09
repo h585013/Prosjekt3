@@ -1,9 +1,12 @@
 package no.hvl.dat109.dao;
 
+import java.util.List;
+
 import javax.ejb.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import no.hvl.dat109.databaseEmmaTest.Bruker;
 import no.hvl.dat109.spill.Spill;
 
 @Stateless
@@ -11,19 +14,22 @@ public class SpillDAO {
 	@PersistenceContext(name = "spillPU")
 	private EntityManager em;
 
-	public void leggTilSpill(Spill spill) {
+	private List<Bruker> brukere;
+	public int leggTilSpill(Spill spill) {
 		em.persist(spill);
+		em.flush();
+		return spill.getSpillID();
 	}
 
-	public Spill finnSpill(Long id) {
+	public Spill finnSpill(int id) {
 		return em.find(Spill.class, id);
 	}
-// finn admin(er brukernavn til den som lagde spillet) i spill ?
 
-// hente ut listen med alle spillere
-
-// legg til spiller i spill
-
-//slett spill
-
+	public List<Bruker> hentAlle(){
+		return em.createQuery("Select b from Bruker b",Bruker.class).getResultList();
+		
+	}
+	public void slettSpill(Spill spill) {
+	em.remove(spill);
+	}
 }
