@@ -40,6 +40,8 @@ public class RegistrationServlet extends HttpServlet {
 
 		String requestData = request.getReader().lines().collect(Collectors.joining());
 
+//		String requestData[] = request.getReader().
+		
 		ObjectMapper objectMapper = new ObjectMapper();
 		Bruker brukerRegistrering = objectMapper.readValue(requestData, Bruker.class);
 		

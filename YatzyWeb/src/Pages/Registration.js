@@ -15,7 +15,6 @@ const Registration = () => {
     const [epost, setEpost] = useState("")
     const [passord, setPassord] = useState("")
     const [passordRepeat, setPassordRepeat] = useState("")
-    const history = useHistory()
     
     // for å sende variabler til en annen side: 
     //passord: hsashe, local store, lagre det samme men et objekt som har expirationDate
@@ -44,6 +43,11 @@ const Registration = () => {
             if(res.ok){
                 window.location.assign("http://localhost:8080/Prosjekt3/Forside")
           }});
+    }
+
+    const handlePasswordUpdate =(event) =>{
+        event.preventDefault();
+
     }
 
 //Få en token JWT token 

@@ -23,9 +23,12 @@ public class Bruker {
 	private String passord;
 
 //	private String salt;
+	
 	@ManyToOne
 	@JoinColumn(name = "spillID", referencedColumnName = "spillID")
 	private Spill spill;
+	
+	int score;
 
 
 	public Spill getSpill() {
@@ -39,12 +42,19 @@ public class Bruker {
 	public Bruker() {
 
 	}
+	
 
 	public Bruker(String brukernavn, String epost, String passord) {
+		this(brukernavn, epost, passord, 0, null);
+	}
+		
+	public Bruker(String brukernavn, String epost, String passord, int score, Spill spill) {
+
 		this.brukernavn = brukernavn;
 		email = epost;
 		this.passord = passord;
-		
+		this.score = score;
+		this.spill = spill;
 	}
 
 	public String getBrukernavn() {

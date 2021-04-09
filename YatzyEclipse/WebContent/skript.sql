@@ -35,7 +35,6 @@ CREATE TABLE Bruker
 	score INTEGER, 
 	passord varchar, 
 	email varchar, 
-	brukernavn varchar,
 	PRIMARY KEY (brukernavn)
 );
 
