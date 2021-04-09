@@ -1,8 +1,8 @@
---Usikker på ka schema osv skal heite????? -> finn ut 
+
 DROP SCHEMA IF EXISTS yatzy  CASCADE;
 CREATE SCHEMA yatzy;
 SET search_path = yatzy;
---test thea
+
 CREATE TABLE Resultat 
 (
    spillID INTEGER, --Finn ut
@@ -25,27 +25,23 @@ CREATE TABLE Resultat
    sjanse INTEGER, 
    yatzy INTEGER, 
    totalSum INTEGER, 
-
-   FOREIGN KEY(spillID) FROM Spill (spillID) ,
-   FOREIGN KEY(brukernavn) FROM Bruker (brukernavn),
    PRIMARY KEY (spillID, spillerId)
 );
 
 CREATE TABLE Bruker
 (	
-	spillerId SERIAL INTEGER,
+	spillerId SERIAL,
 	navn varchar,
 	score INTEGER, 
 	passord varchar, 
 	email varchar, 
 	brukernavn varchar,
-	passord varchar,
-	FOREIGN KEY(spillId) FROM Spill (spillerId)
+	PRIMARY KEY (spillerId)
 );
 
 CREATE TABLE Spill
 ( 
-spillID SERIAL INTEGER,
+ spillID SERIAL,
  spillNavn varchar,
  admin varchar,
  PRIMARY KEY (spillID)
