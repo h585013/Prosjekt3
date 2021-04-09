@@ -12,7 +12,19 @@
 		<class>no.hvl.dat109.databaseEmmaTest.Bruker</class>
 		<class>no.hvl.dat109.servlets.VenteromServlet</class>
 		<class>no.hvl.dat109.dao.BrukerDAO</class>
-		<class>no.hvl.dat109.spiller.Spiller</class>
+		
+		<properties>
+			<property name="eclipselink.weaving" value="false" />
+		</properties>
+		
+	</persistence-unit>
+	<persistence-unit name="spillPU"
+		transaction-type="JTA">
+		
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>DAT108LocalDS</jta-data-source>
+		<class>no.hvl.dat109.spill.Spill</class>
+				
 		<properties>
 			<property name="eclipselink.weaving" value="false" />
 		</properties>

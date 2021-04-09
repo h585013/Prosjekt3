@@ -23,7 +23,7 @@ import no.hvl.dat109.spiller.Spiller;
  */
 
 @Entity
-@Table(schema = "public", name = "spill")
+@Table(schema = "yatzy", name = "spillPU")
 public class Spill {
 
 	@Id
@@ -66,6 +66,7 @@ public class Spill {
 	public String getSpillNavn() {
 		return spillNavn;
 	}
+	
 
 	public void setSpillNavn(String spillNavn) {
 		this.spillNavn = spillNavn;
