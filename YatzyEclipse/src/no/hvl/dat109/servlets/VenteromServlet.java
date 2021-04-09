@@ -31,10 +31,4 @@ public class VenteromServlet extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//sende videre spillid, for tiden er spillnavn PK fordi vi vet ikke hvordan vi får tak i automatisk generert pk fra databasen 
-		response.sendRedirect("YatzySpillServlet"); 
-	
-	}
-
 }
