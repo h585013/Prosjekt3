@@ -12,18 +12,19 @@ import javax.persistence.Table;
 import no.hvl.dat109.spiller.Spiller;
 
 /**
-* Spill entiteten innholder en unik id,et spillnavn valgt av spiller når
-* spillet opprettes. En string med brukernavn til den som opprettet Spillet, og
-* en liste av deltagere.
-* @author vilde
-*/
+ * Spill entiteten innholder en unik id,et spillnavn valgt av spiller når
+ * spillet opprettes. En string med brukernavn til den som opprettet Spillet, og
+ * en liste av deltagere.
+ * 
+ * @author vilde
+ */
 
 @Entity
 @Table(schema = "public", name = "spiller")
 public class Spill {
-	
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//private int id;
+
+	// @GeneratedValue(strategy = GenerationType.IDENTITY)
+	// private int id;
 	@Id
 	private String spillNavn;
 	private String admin;
@@ -41,9 +42,37 @@ public class Spill {
 	 */
 	public Spill(String spillNavn, String admin) {
 
-		
 		this.spillNavn = spillNavn;
 		this.admin = admin;
 
 	}
+
+	public Spill() {
+
+	}
+
+	public String getSpillNavn() {
+		return spillNavn;
+	}
+
+	public void setSpillNavn(String spillNavn) {
+		this.spillNavn = spillNavn;
+	}
+
+	public String getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
+
+	public List<Spiller> getSpillere() {
+		return spillere;
+	}
+
+	public boolean leggTilSpiller(Spiller spiller) {
+		return this.spillere.add(spiller);
+	}
+
 }
