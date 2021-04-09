@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class ResultatID implements Serializable {
 	@Column(name = "spillerID")
-	private int spillerID; 
+	private String spillerID; 
 	@ManyToOne
 	@Column(name = "spillID")
 	@JoinColumn(name = "spillerID", referencedColumnName = "spillerID")
@@ -20,12 +20,12 @@ public class ResultatID implements Serializable {
 	public ResultatID() {
 	}
 	
-	public ResultatID(int spillerID, int spillID) {
+	public ResultatID(String spillerID, int spillID) {
 		this.spillerID = spillerID;
 		this.spillID = spillID;
 	} 
 	
-	public int getSpillerID() {
+	public String getSpillerID() {
 		return spillerID;
 	}
 	
