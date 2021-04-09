@@ -53,7 +53,7 @@ public class LagSpillServlet extends HttpServlet {
 		}
 		sesjon = request.getSession(true);		
 		sesjon.setAttribute("spillnavn", spillNavnEscaped);
-		
+		//
 	}	
 
 }
