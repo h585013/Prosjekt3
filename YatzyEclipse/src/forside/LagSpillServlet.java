@@ -1,4 +1,4 @@
-package no.hvl.dat109.forside;
+
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,6 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
+import no.hvl.dat109.spill.Spill;
 
 /**
  * @author vilde
