@@ -14,7 +14,7 @@ public class ResultatID implements Serializable {
 	private int spillerID; 
 	@ManyToOne
 	@Column(name = "spillID")
-	@JoinColumn(name = "spillerId", referencedColumnName = "spillerId")
+	@JoinColumn(name = "spillerID", referencedColumnName = "spillerID")
 	private int spillID;
 	
 	public ResultatID() {
