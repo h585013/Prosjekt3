@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import no.hvl.dat109.dao.BrukerDAO;
-import no.hvl.dat109.spiller.Spiller;
+import no.hvl.dat109.databaseEmmaTest.Bruker;
+
 
 /**
  * Servlet implementation class VenteromServlet
