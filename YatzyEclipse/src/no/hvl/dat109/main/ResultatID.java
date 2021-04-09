@@ -10,9 +10,8 @@ import javax.persistence.ManyToOne;
 
 @Embeddable
 public class ResultatID implements Serializable {
-	@ManyToOne
+	
 	@Column(name = "brukernavn")
-	@JoinColumn(name = "brukernavn", referencedColumnName = "brukernavn")
 	private String brukernavn; 
 	@ManyToOne
 	@Column(name = "spillID")
