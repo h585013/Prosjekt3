@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 
 import no.hvl.dat109.databaseEmmaTest.Bruker;
 import no.hvl.dat109.spill.Spill;
-import no.hvl.dat109.spiller.Spiller;
+
 
 @Stateless
 public class BrukerDAO {
@@ -52,8 +52,8 @@ public class BrukerDAO {
 		}
 	}
 
-	public List<Spiller> hentAlle() {
-		return em.createQuery("select s from Spiller s", Spiller.class).getResultList();
+	public List<Bruker> hentAlle() {
+		return em.createQuery("select b from Bruker b", Bruker.class).getResultList();
 	}
 	public void leggTilSpill(Bruker bruker,Spill spill) {
 	
