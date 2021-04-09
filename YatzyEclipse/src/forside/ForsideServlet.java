@@ -23,13 +23,11 @@ public class ForsideServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		request.getRequestDispatcher("WEB-INF/jsp/forside.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession();
@@ -42,10 +40,10 @@ public class ForsideServlet extends HttpServlet {
 		sesjon.setAttribute("brukernavn", brukernavn);
 		String handling= request.getParameter("handling");
 		if(handling=="lagSpill") {
-			response.sendRedirect("lagSpill.html");
+			response.sendRedirect("/LagSpillServlet");
 		}
 		if(handling=="deltaSpill") {
-			response.sendRedirect("deltaSpill.html");
+			response.sendRedirect("/DeltaISpill");
 		}
 		
 	}
