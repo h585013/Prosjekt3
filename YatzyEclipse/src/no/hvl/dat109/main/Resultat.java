@@ -144,7 +144,5 @@ public class Resultat {
 	public void setTotalSum(int totalSum) {
 		this.totalSum = totalSum;
 	}
-	
-	
 
 }
