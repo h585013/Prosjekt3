@@ -31,7 +31,7 @@ CREATE TABLE Resultat
    PRIMARY KEY (spillID, spillerId)
 );
 
-CREATE TABLE Spiller
+CREATE TABLE Bruker
 (	
 	spillerId SERIAL INTEGER,
 	navn varchar,
