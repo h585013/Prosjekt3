@@ -38,7 +38,8 @@ CREATE TABLE Spiller
 	score INTEGER, 
 	passord varchar, 
 	email varchar, 
-	brukernavn varchar
+	brukernavn varchar,
+	FOREIGN KEY(spillId) FROM Spill (spillerId)
 );
 
 CREATE TABLE Spill
