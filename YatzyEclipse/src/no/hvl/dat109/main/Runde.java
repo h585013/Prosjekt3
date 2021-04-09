@@ -8,6 +8,13 @@ import no.hvl.dat109.spiller.Spiller;
 import no.hvl.dat109.terningkast.Kopp;
 import no.hvl.dat109.terningkast.Terning;
 
+/**
+ * Objekt som representerer en runde i yatzy spillet. Lagrer nyttig informasjon
+ * og utfører endringer for hver runde og spiller
+ * 
+ * @author Anne
+ *
+ */
 public class Runde {
 	// Objektvariabler
 	private ArrayList<Spiller> spillere;
@@ -18,54 +25,64 @@ public class Runde {
 	private List<Terning> terninger;
 	private Yatzy yatzy = new Yatzy();
 
+	/**
+	 * Konstruktør som starter første runden
+	 * 
+	 * @param spillere, spillerne som skal være med i hele spillet
+	 */
 	public Runde(ArrayList<Spiller> spillere) {
 		System.out.println("OPPRETTER RUNDEN");
 		this.spillere = spillere;
 		this.currPlayer = 0;
 		this.rundenr = 1;
-		
+
 		kopp.trillerTerningene();
 		this.terninger = kopp.getTerningKastArrayList();
 
 		for (Spiller s : this.spillere)
 			this.trillCount.add(0);
 	}
-
+	
+	
+	/**
+	 * Logikk for en runde 
+	 * 
+	 * @param scoreHittil, poengene currPlayer har fått hittil
+	 * @param indekser, indeks på hvilke terninger i array som skal beholdes
+	 * @return poeng for runden hvis spilleren har trilt tre ganger, 0 ellers
+	 */
 	public int spillRunde(ArrayList<Integer> scoreHittil, Enumeration<String> indekser) {
-		System.out.println("----------------");
-		System.out.println("STARTER EN RUNDE - " + rundenr);
 		boolean ferdig = this.trillCount.stream().mapToInt(t -> t).allMatch(t -> t == 3);
 		if (ferdig) { // Alle spillerne har trilt sine 3 ganger
-			// neste runde 
+			// Skal da gå videre til neste runde
 			rundenr++;
 			nesteSpiller();
 			for (int i = 0; i < this.trillCount.size(); i++) {
 				this.trillCount.set(i, 0);
 			}
 			trillAlleTerningerIgjen();
-			System.out.println("NESTE RUNDE! - " + rundenr);
 		} else {
-			if (this.trillCount.get(currPlayer) == 3) {
-				System.out.println("NESTE SPILLER!");
+			if (this.trillCount.get(currPlayer) == 3) { // currPlayer har trilt sine tre ganger
 				// Beregn poeng for currPlayer
 				int poeng = yatzy.runde(this.rundenr, this.terninger, scoreHittil);
 				nesteSpiller();
 				trillAlleTerningerIgjen();
 				return poeng;
 			} else {
-				System.out.println("CURR FÅR TRILLE!");
-				// currPlayer får trille igjen:
+				// CurrPlayer får trille igjen:
 				spillerTur(indekser);
 
 			}
 		}
-
 		return 0;
 	}
-
-	private int spillerTur(Enumeration<String> indekser) {
-		System.out.println("-----------");
-		System.out.println("EN SPILLER SIN TUR!");
+	
+	/**
+	 * Metode som utfører runden til en spiller, altså et trill
+	 * @param indekser, indeks for terninger som ble valgt av spiller for å beholde de
+	 */
+	private void spillerTur(Enumeration<String> indekser) {
+		// Sjekker om det er første trill for spilleren 
 		if (this.trillCount.get(currPlayer) == 0) {
 			trillAlleTerningerIgjen();
 		} else {
@@ -77,10 +94,12 @@ public class Runde {
 		int currTrillCount = this.trillCount.get(this.currPlayer);
 		currTrillCount++;
 		this.trillCount.set(currPlayer, currTrillCount);
-		
-		return 0;
 	}
 	
+	/**
+	 * Metode som triller noen terninger på nytt
+	 * @param indekser, indekser for terningene som ikke skal trilles igjen
+	 */
 	private void trillTerningerIgjen(Enumeration<String> indekser) {
 		List<Integer> behold = new ArrayList<Integer>();
 		while (indekser.hasMoreElements()) {
@@ -97,6 +116,9 @@ public class Runde {
 		}
 	}
 	
+	/**
+	 * Metode som triller alle terningene på nytt
+	 */
 	private void trillAlleTerningerIgjen() {
 		for (int i = 0; i < this.terninger.size(); i++) {
 			Terning t = this.terninger.get(i);
@@ -104,7 +126,10 @@ public class Runde {
 			this.terninger.set(i, t);
 		}
 	}
-
+	
+	/**
+	 * Metode som bestemmer hvem som er neste spiller
+	 */
 	private void nesteSpiller() {
 		if (this.currPlayer == this.spillere.size() - 1)
 			currPlayer = 0;
@@ -112,37 +137,52 @@ public class Runde {
 			currPlayer++;
 	}
 
+	/**
+	 * Hent ut spillerne
+	 * @return arraylist av spillerne
+	 */
 	public ArrayList<Spiller> getSpillere() {
 		return spillere;
 	}
 
+	/**
+	 * Hent ut nåværende spiller
+	 * @return Spiller objektet
+	 */
 	public Spiller getCurrPlayer() {
 		return this.spillere.get(currPlayer);
 	}
 
+	/**
+	 * Hent ut trillCount til nåværende spiller
+	 * @return trillCount til nåværende spiller
+	 */
 	public int getTc() {
 		return this.trillCount.get(currPlayer);
 	}
-	
 
+	/**
+	 * Henter alle trillcountene
+	 * @return alle spillerne sin trillCount
+	 */
 	public ArrayList<Integer> getTrillCount() {
 		return trillCount;
 	}
 
+	/**
+	 * Finner rundenummeret
+	 * @return rundenummeret
+	 */
 	public int getRundenr() {
 		return rundenr;
 	}
 
-	public Kopp getKopp() {
-		return kopp;
-	}
-
+	/**
+	 * Henter ut nåværende terninger
+	 * @return liste over terningene
+	 */
 	public List<Terning> getTerninger() {
 		return terninger;
-	}
-
-	public Yatzy getYatzy() {
-		return yatzy;
 	}
 
 }
