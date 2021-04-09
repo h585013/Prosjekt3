@@ -28,7 +28,7 @@ public class VenteromServlet extends HttpServlet {
 	
 		List<Spiller> spillere = dao.hentAlle();
 		request.setAttribute("spillerListe", spillere);	
-		request.getRequestDispatcher("/jsp/venterom.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
