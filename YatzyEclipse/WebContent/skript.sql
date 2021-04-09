@@ -44,9 +44,10 @@ CREATE TABLE Spiller
 
 CREATE TABLE Spill
 ( 
+spillID SERIAL INTEGER,
  spillNavn varchar,
  admin varchar,
- PRIMARY KEY (spillNavn)
+ PRIMARY KEY (spillID)
 );
 
 
