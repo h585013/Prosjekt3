@@ -11,7 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
+import no.hvl.dat109.dao.BrukerDAO;
 import no.hvl.dat109.dao.SpillDAO;
+import no.hvl.dat109.databaseEmmaTest.Bruker;
 import no.hvl.dat109.spill.Spill;
 
 /**
@@ -24,20 +26,18 @@ public class LagSpillServlet extends HttpServlet {
 	@EJB
 	SpillDAO spilldao= new SpillDAO();
 	
+	@EJB
+	BrukerDAO brukerdao= new BrukerDAO();
+	
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * 
-     */
+  
   
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.getRequestDispatcher("WEB-INF/jsp/opprettSpill.jsp").forward(request, response);
 	}
 
-	/**
-	 * 
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesjon = request.getSession();
 		//Vet ikke hvordan emma lagrer bruker, men tenker sesjonen?-vilde
@@ -48,6 +48,9 @@ public class LagSpillServlet extends HttpServlet {
 		String spillNavnEscaped= StringEscapeUtils.escapeHtml4(request.getParameter("spillNavn"));
 		Spill spill= new Spill(spillNavnEscaped,brukernavn);
 		spilldao.leggTilSpill(spill);
+		Bruker bruker=brukerdao.finnBruker(brukernavn);
+		
+		
 		if (sesjon != null) {
 			sesjon.invalidate();
 		}

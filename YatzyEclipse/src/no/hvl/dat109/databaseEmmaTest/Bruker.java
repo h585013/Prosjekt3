@@ -1,7 +1,9 @@
 package no.hvl.dat109.databaseEmmaTest;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +19,8 @@ public class Bruker {
 	private String passord;
 
 //	private String salt;
+ @OneToMany( mappedBy= "bruker",fetch = FetchType.EAGER)
+private int spillID;
 
 	public Bruker() {
 
