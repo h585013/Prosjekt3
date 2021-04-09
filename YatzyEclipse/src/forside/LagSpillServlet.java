@@ -59,6 +59,7 @@ public class LagSpillServlet extends HttpServlet {
 			sesjon.invalidate();
 		}
 		sesjon = request.getSession(true);
+		sesjon.setAttribute("brukernavn", brukernavn);
 		sesjon.setAttribute("spillnavn", spillNavnEscaped);
 		sesjon.setAttribute("spillID", spillID);
 		response.sendRedirect("/VenteromServlet");
