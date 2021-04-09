@@ -10,23 +10,23 @@ import javax.persistence.ManyToOne;
 
 @Embeddable
 public class ResultatID implements Serializable {
-	@Column(name = "spillerID")
-	private String spillerID; 
+	@Column(name = "brukernavn")
+	private String brukernavn; 
 	@ManyToOne
 	@Column(name = "spillID")
-	@JoinColumn(name = "spillerID", referencedColumnName = "spillerID")
+	@JoinColumn(name = "spillID", referencedColumnName = "spillID")
 	private int spillID;
 	
 	public ResultatID() {
 	}
 	
-	public ResultatID(String spillerID, int spillID) {
-		this.spillerID = spillerID;
+	public ResultatID(String brukernavn, int spillID) {
+		this.brukernavn = brukernavn;
 		this.spillID = spillID;
 	} 
 	
-	public String getSpillerID() {
-		return spillerID;
+	public String getBrukernavn() {
+		return brukernavn;
 	}
 	
 	public int getSpillID() {
@@ -38,13 +38,13 @@ public class ResultatID implements Serializable {
 		if (this == o) return true;
 		if(!(o instanceof ResultatID)) return false;
 		ResultatID that = (ResultatID) o;
-		return Objects.equals(getSpillerID(), that.getSpillerID()) &&
+		return Objects.equals(getBrukernavn(), that.getBrukernavn()) &&
 				Objects.equals(getSpillID(), that.getSpillID());
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(getSpillerID(),getSpillID());
+		return Objects.hash(getBrukernavn(),getSpillID());
 	}
 	
 

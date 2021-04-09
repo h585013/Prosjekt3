@@ -6,7 +6,7 @@ SET search_path = yatzy;
 CREATE TABLE Resultat 
 (
    spillID INTEGER, --Finn ut
-   spillerId INTEGER, --Finn ut 
+   brukernavn varchar, --Finn ut 
    enere INTEGER, 
    toere INTEGER,    
    treere INTEGER, 
@@ -25,11 +25,12 @@ CREATE TABLE Resultat
    sjanse INTEGER, 
    yatzy INTEGER, 
    totalSum INTEGER, 
-   PRIMARY KEY (spillID, spillerId)
+   PRIMARY KEY (spillID, brukernavn)
 );
 
 CREATE TABLE Bruker
 (	
+	spillerId SERIAL,
 	navn varchar,
 	score INTEGER, 
 	passord varchar, 
@@ -42,12 +43,11 @@ CREATE TABLE Spill
 ( 
  spillID SERIAL,
  spillNavn varchar,
- admin varchar,
  PRIMARY KEY (spillID)
 );
 
 ALTER TABLE Resultat ADD constraint Res_fk  FOREIGN KEY (spillID) REFERENCES Spill(spillID);
-ALTER TABLE Resultat ADD constraint Res_fk2  FOREIGN KEY (spillerId) REFERENCES Bruker(spillId);
+ALTER TABLE Resultat ADD constraint Res_fk2  FOREIGN KEY (spillerId) REFERENCES Bruker(brukenavn);
 
 
 
