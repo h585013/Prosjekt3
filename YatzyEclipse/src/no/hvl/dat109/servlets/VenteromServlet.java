@@ -35,7 +35,7 @@ public class VenteromServlet extends HttpServlet {
 		//Reload knapp
 		// sende videre spillid 
 		
-	// funker det nå
+	
 	}
 
 }
