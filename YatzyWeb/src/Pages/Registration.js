@@ -1,6 +1,8 @@
 
 import React, {Component, useState} from 'react';
 import './Login.css';
+import { useHistory } from "react-router-dom";
+
 
 import 'fontsource-roboto';
 import Grid from '@material-ui/core/grid';
@@ -13,6 +15,7 @@ const Registration = () => {
     const [epost, setEpost] = useState("")
     const [passord, setPassord] = useState("")
     const [passordRepeat, setPassordRepeat] = useState("")
+    const history = useHistory()
     
     // for å sende variabler til en annen side: 
     //passord: hsashe, local store, lagre det samme men et objekt som har expirationDate
@@ -37,10 +40,10 @@ const Registration = () => {
         fetch("http://localhost:8080/Prosjekt3/registrer", {
             method: "POST", 
             body: JSON.stringify(payload)
-          }).then(res => {
-            console.log("Request complete! response:", res);
-          });
-
+          }).then(res => {            
+            if(res.ok){
+                window.location.assign("http://localhost:8080/Prosjekt3/Forside")
+          }});
     }
 
 //Få en token JWT token 

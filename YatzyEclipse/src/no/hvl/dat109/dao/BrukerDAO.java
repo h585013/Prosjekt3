@@ -39,8 +39,15 @@ public class BrukerDAO {
 	// burde nok ikke være her
 
 	@Transactional
-	public void leggTilBruker(Bruker b) {
-		em.persist(b);
+	public boolean leggTilBruker(Bruker b) {
+		
+		if(brukernavnLedig(b.getBrukernavn())) {
+			em.persist(b);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public List<Spiller> hentAlle() {

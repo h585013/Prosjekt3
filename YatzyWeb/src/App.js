@@ -14,9 +14,11 @@ const App = () => {
     
     <main>
      <Switch>
-        <Route path="/" component={Login} exact />
+        <Route exact path="/" component={Login} />
+        <Route path="/login" component={Login} />
         <Route path="/registration" component ={Registration}/>
         <Route path="/venterom" component ={venterom}/>
+        
       </Switch>
 
     </main>
@@ -26,3 +28,4 @@ const App = () => {
 
 
 export default App;
+
