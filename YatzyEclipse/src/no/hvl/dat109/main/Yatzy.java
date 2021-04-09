@@ -10,7 +10,7 @@ import no.hvl.dat109.regler.Regler;
 import no.hvl.dat109.terningkast.Terning;
 
 /**
- * Hovedklasse som starter spillet
+ * 
  *
  * Antar at spillet er tvunget yatzy i første omgang hvertfall
  *

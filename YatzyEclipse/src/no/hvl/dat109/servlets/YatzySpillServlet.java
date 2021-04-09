@@ -17,7 +17,7 @@ import no.hvl.dat109.spiller.Spiller;
 /**
  * Implementasjon av å faktisk spille spillet
  * 
- * @author - Anne, Thea, Magnus
+ * @author - Anne, Thea, Magnus 
  */
 @WebServlet("/game")
 public class YatzySpillServlet extends HttpServlet {

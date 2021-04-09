@@ -36,7 +36,7 @@ public class Runde {
 		System.out.println("STARTER EN RUNDE - " + rundenr);
 		boolean ferdig = this.trillCount.stream().mapToInt(t -> t).allMatch(t -> t == 3);
 		if (ferdig) { // Alle spillerne har trilt sine 3 ganger
-			// neste runde
+			// neste runde 
 			rundenr++;
 			nesteSpiller();
 			for (int i = 0; i < this.trillCount.size(); i++) {
