@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import no.hvl.dat109.spill.Spill;
 
 @Entity
-@Table(schema = "public", name = "spiller")
+@Table(schema = "public", name = "bruker")
 public class Bruker {
 
 	@Id

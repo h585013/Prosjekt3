@@ -26,8 +26,8 @@ CREATE TABLE Resultat
    yatzy INTEGER, 
    totalSum INTEGER, 
 
-   FOREIGN KEY(spillID) FROM ... , --Finn ut
-   FOREIGN KEY(spillerId) FROM Spiller (spillerId) ,
+   FOREIGN KEY(spillID) FROM Spill (spillID) ,
+   FOREIGN KEY(brukernavn) FROM Bruker (brukernavn),
    PRIMARY KEY (spillID, spillerId)
 );
 
