@@ -3,8 +3,12 @@ package no.hvl.dat109.databaseEmmaTest;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import no.hvl.dat109.spill.Spill;
 
 @Entity
 @Table(schema = "public", name = "spiller")
@@ -19,8 +23,18 @@ public class Bruker {
 	private String passord;
 
 //	private String salt;
- @OneToMany( mappedBy= "bruker",fetch = FetchType.EAGER)
-private int spillID;
+	@ManyToOne
+	@JoinColumn(name = "spillID", referencedColumnName = "spillID")
+	private Spill spill;
+
+
+	public Spill getSpill() {
+		return spill;
+	}
+
+	public void setSpill(Spill spill) {
+		this.spill = spill;
+	}
 
 	public Bruker() {
 
