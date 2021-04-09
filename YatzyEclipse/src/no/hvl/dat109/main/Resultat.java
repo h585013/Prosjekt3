@@ -6,15 +6,11 @@ import javax.persistence.IdClass;
 
 
 
-@Entity
-@IdClass(ResultatID.class)
+@Entity(name = "Resultat")
+@Table(name = "resultat")
 public class Resultat {
-	@Id
-	private int spillID;
-	@Id
-	@ManyToOne
-	@JoinColumn(name = "spillerId", referencedColumnName = "spillerId")
-	private int spillerID;
+	@EmbeddedId
+	private ResultatID id;
 
 	private int enere;
 	private int toere;
@@ -37,14 +33,9 @@ public class Resultat {
 	
 	
 	
-	public int getSpillID() {
-		return spillID;
+	public ResultatID getId() {
+		return id;
 	}
-	
-	public int getSpillerID() {
-		return spillerID;
-	}
-
 	public int getEnere() {
 		return enere;
 	}
