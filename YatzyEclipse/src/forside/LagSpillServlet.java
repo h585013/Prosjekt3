@@ -47,7 +47,7 @@ public class LagSpillServlet extends HttpServlet {
 		String spillNavnEscaped = StringEscapeUtils.escapeHtml4(request.getParameter("spillNavn"));
 		
 		Spill spill = new Spill(spillNavnEscaped, brukernavn);
-		spilldao.leggTilSpill(spill);
+		int spillID = spilldao.leggTilSpill(spill);
 		
 		Bruker bruker = brukerdao.finnBruker(brukernavn);
 		brukerdao.leggTilSpill(bruker, spill);
@@ -60,6 +60,7 @@ public class LagSpillServlet extends HttpServlet {
 		}
 		sesjon = request.getSession(true);
 		sesjon.setAttribute("spillnavn", spillNavnEscaped);
+		sesjon.setAttribute("spillID", spillID);
 		response.sendRedirect("/VenteromServlet");
 	}
 
