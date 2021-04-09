@@ -46,6 +46,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		if(dao.leggTilBruker(brukerRegistrering)){
 			//Om det gikk greit :)
+			request.getSession().setAttribute("brukernavn", brukerRegistrering.getBrukernavn());
 			response.setStatus(HttpServletResponse.SC_CREATED); 
 		}else {
 			// Om det ikke gikk greit :(

@@ -58,6 +58,7 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			if (dao.matcherPassord(b, passord)) {
 
+				request.getSession().setAttribute("brukernavn", b.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_OK);
 
 			} else {
