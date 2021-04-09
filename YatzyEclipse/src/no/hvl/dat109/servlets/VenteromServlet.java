@@ -32,9 +32,8 @@ public class VenteromServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Reload knapp
-		// sende videre spillid 
-		
+		//sende videre spillid, for tiden er spillnavn PK fordi vi vet ikke hvordan vi får tak i automatisk generert pk fra databasen 
+		response.sendRedirect("YatzySpillServlet"); 
 	
 	}
 
