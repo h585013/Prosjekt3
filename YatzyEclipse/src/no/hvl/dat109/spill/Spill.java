@@ -3,12 +3,15 @@ package no.hvl.dat109.spill;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import no.hvl.dat109.databaseEmmaTest.Bruker;
 import no.hvl.dat109.spiller.Spiller;
 
 /**
@@ -20,17 +23,26 @@ import no.hvl.dat109.spiller.Spiller;
  */
 
 @Entity
-@Table(schema = "public", name = "spiller")
+@Table(schema = "public", name = "spill")
 public class Spill {
 
-	// @GeneratedValue(strategy = GenerationType.IDENTITY)
-	// private int id;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int spillID;
+	public int getSpillID() {
+		return spillID;
+	}
+
+	
+	public void setBrukere(List<Bruker> brukere) {
+		this.brukere = brukere;
+	}
+
 	private String spillNavn;
 	private String admin;
 
-	@OneToMany(mappedBy = "spiller")
-	private List<Spiller> spillere;
+	@OneToMany(mappedBy = "spill", fetch = FetchType.EAGER)
+	private List<Bruker> brukere;
 
 	/**
 	 * Konstruktør
@@ -67,12 +79,12 @@ public class Spill {
 		this.admin = admin;
 	}
 
-	public List<Spiller> getSpillere() {
-		return spillere;
+	public List<Bruker> getBrukere() {
+		return brukere;
 	}
 
-	public boolean leggTilSpiller(Spiller spiller) {
-		return this.spillere.add(spiller);
+	public boolean leggTilBruker(Bruker bruker) {
+		return this.brukere.add(bruker);
 	}
 
 }
