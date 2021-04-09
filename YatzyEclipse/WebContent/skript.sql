@@ -38,7 +38,8 @@ CREATE TABLE Spiller
 	score INTEGER, 
 	passord varchar, 
 	email varchar, 
-	brukernavn varchar
+	brukernavn varchar,
+	passord varchar
 );
 
 CREATE TABLE Spill
