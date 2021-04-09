@@ -21,9 +21,10 @@ import no.hvl.dat109.spiller.Spiller;
 @Entity
 @Table(schema = "public", name = "spiller")
 public class Spill {
+	
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//private int id;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	private String spillNavn;
 	private String admin;
 
@@ -33,7 +34,7 @@ public class Spill {
 	/**
 	 * Konstruktør
 	 * 
-	 * @param id
+	 * 
 	 * @param spillNavn
 	 * @param admin
 	 * 
