@@ -8,8 +8,6 @@
 <style>
 	<%@include file="../css/game.css"%>
 </style>
-<!-- @include file="css/game.css" -->
-<!-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/game.css" />-->
 <title>YATZY!</title>
 </head>
 <body>
@@ -163,9 +161,6 @@
 							<c:forEach var="t" items="${runde.terninger}" varStatus="count">
 								<div>
 								<input type="checkbox" name="${count.index}"/>${t.tall}
-								<!-- <img src="t${t.tall}.png" height="50" width="50" /> -->
-								<!-- <input type="checkbox" class="check_box" id="checkbox1" /> -->
-								<!-- <label for="checkbox1"/> -->
 								</div>
 							</c:forEach>
 							</c:otherwise>

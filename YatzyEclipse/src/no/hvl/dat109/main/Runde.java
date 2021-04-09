@@ -18,7 +18,7 @@ import no.hvl.dat109.terningkast.Terning;
  */
 public class Runde {
 	// Objektvariabler
-	private ArrayList<Bruker> brukere;
+	private ArrayList<Bruker> spillere;
 	private int currPlayer;
 	private ArrayList<Integer> trillCount = new ArrayList<Integer>();
 	private int rundenr;
@@ -33,14 +33,14 @@ public class Runde {
 	 */
 	public Runde(ArrayList<Bruker> brukere) {
 		System.out.println("OPPRETTER RUNDEN");
-		this.brukere = brukere;
+		this.spillere = brukere;
 		this.currPlayer = 0;
 		this.rundenr = 1;
 
 		kopp.trillerTerningene();
 		this.terninger = kopp.getTerningKastArrayList();
 
-		for (Bruker s : this.brukere)
+		for (Bruker s : this.spillere)
 			this.trillCount.add(0);
 	}
 	
@@ -132,7 +132,7 @@ public class Runde {
 	 * Metode som bestemmer hvem som er neste spiller
 	 */
 	private void nesteSpiller() {
-		if (this.currPlayer == this.brukere.size() - 1)
+		if (this.currPlayer == this.spillere.size() - 1)
 			currPlayer = 0;
 		else
 			currPlayer++;
@@ -143,7 +143,7 @@ public class Runde {
 	 * @return arraylist av spillerne
 	 */
 	public ArrayList<Bruker> getSpillere() {
-		return brukere;
+		return spillere;
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class Runde {
 	 * @return Spiller objektet
 	 */
 	public Bruker getCurrPlayer() {
-		return this.brukere.get(currPlayer);
+		return this.spillere.get(currPlayer);
 	}
 
 	/**
