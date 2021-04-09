@@ -42,7 +42,10 @@ CREATE TABLE Spiller
 );
 
 CREATE TABLE Spill
-( -- trenger vi dette?
+( 
+ spillNavn varchar,
+ admin varchar,
+ PRIMARY KEY (spillNavn)
 );
 
 

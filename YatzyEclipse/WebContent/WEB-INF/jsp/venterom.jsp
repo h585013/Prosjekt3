@@ -12,7 +12,7 @@ pageEncoding="ISO-8859-1"%>
 <body>
    <!-- <script>window.setInterval('refresh()', 3000); </script>   -->
     <div class="navbar">
-        <a class="active" href="#">EXIT</a>
+        <a class="active" href="forside.ForsideServlet">EXIT</a>
         <a class="active" href="#" onclick="location.reload();" style="z-index: 3;">REFRESH</a>
     </div>
     <div class="terning">
@@ -32,6 +32,7 @@ pageEncoding="ISO-8859-1"%>
 </div>
     <form>
 </form> 
-<button class="button" value="START">START</button>
+
+<a href="no.hvl.dat109.servlets.YatzySpillServlet" class="button" value="START">START</a>
 </body>
 </html> 

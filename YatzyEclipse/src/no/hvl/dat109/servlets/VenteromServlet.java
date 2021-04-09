@@ -31,11 +31,4 @@ public class VenteromServlet extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Reload knapp
-		// sende videre spillid 
-		
-	
-	}
-
 }
