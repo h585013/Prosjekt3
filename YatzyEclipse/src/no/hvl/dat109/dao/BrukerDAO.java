@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import no.hvl.dat109.databaseEmmaTest.Bruker;
+import no.hvl.dat109.spill.Spill;
 import no.hvl.dat109.spiller.Spiller;
 
 @Stateless
@@ -19,6 +20,7 @@ public class BrukerDAO {
 	public boolean brukernavnLedig(String navn) {
 
 		Bruker b = em.find(Bruker.class, navn);
+		
 		return b == null;
 	}
 
@@ -52,6 +54,11 @@ public class BrukerDAO {
 
 	public List<Spiller> hentAlle() {
 		return em.createQuery("select s from Spiller s", Spiller.class).getResultList();
+	}
+	public void leggTilSpill(Bruker bruker,Spill spill) {
+	
+	bruker.setSpill(spill);
+	em.persist(bruker);
 	}
 
 }

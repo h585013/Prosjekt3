@@ -39,14 +39,16 @@ CREATE TABLE Spiller
 	passord varchar, 
 	email varchar, 
 	brukernavn varchar,
-	passord varchar
+	passord varchar,
+	FOREIGN KEY(spillId) FROM Spill (spillerId)
 );
 
 CREATE TABLE Spill
 ( 
+spillID SERIAL INTEGER,
  spillNavn varchar,
  admin varchar,
- PRIMARY KEY (spillNavn)
+ PRIMARY KEY (spillID)
 );
 
 
