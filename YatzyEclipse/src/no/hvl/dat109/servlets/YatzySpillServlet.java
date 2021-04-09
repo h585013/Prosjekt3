@@ -42,7 +42,7 @@ public class YatzySpillServlet extends HttpServlet {
 //			spillere.add(new Spiller("Anne", 1));
 //			spillere.add(new Spiller("Thea", 2));
 //			spillere.add(new Spiller("Magnus", 3));
-			Runde r = new Runde(spillere);
+			Runde r = new Runde(brukere);
 			sesjon.setAttribute("runde", r);
 		}
 

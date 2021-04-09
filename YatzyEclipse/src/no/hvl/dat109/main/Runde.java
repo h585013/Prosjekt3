@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import no.hvl.dat109.spiller.Spiller;
+import no.hvl.dat109.databaseEmmaTest.Bruker;
+
 import no.hvl.dat109.terningkast.Kopp;
 import no.hvl.dat109.terningkast.Terning;
 
@@ -17,7 +18,7 @@ import no.hvl.dat109.terningkast.Terning;
  */
 public class Runde {
 	// Objektvariabler
-	private ArrayList<Spiller> spillere;
+	private ArrayList<Bruker> brukere;
 	private int currPlayer;
 	private ArrayList<Integer> trillCount = new ArrayList<Integer>();
 	private int rundenr;
@@ -30,16 +31,16 @@ public class Runde {
 	 * 
 	 * @param spillere, spillerne som skal være med i hele spillet
 	 */
-	public Runde(ArrayList<Spiller> spillere) {
+	public Runde(ArrayList<Bruker> brukere) {
 		System.out.println("OPPRETTER RUNDEN");
-		this.spillere = spillere;
+		this.brukere = brukere;
 		this.currPlayer = 0;
 		this.rundenr = 1;
 
 		kopp.trillerTerningene();
 		this.terninger = kopp.getTerningKastArrayList();
 
-		for (Spiller s : this.spillere)
+		for (Bruker s : this.brukere)
 			this.trillCount.add(0);
 	}
 	
@@ -131,7 +132,7 @@ public class Runde {
 	 * Metode som bestemmer hvem som er neste spiller
 	 */
 	private void nesteSpiller() {
-		if (this.currPlayer == this.spillere.size() - 1)
+		if (this.currPlayer == this.brukere.size() - 1)
 			currPlayer = 0;
 		else
 			currPlayer++;
@@ -141,16 +142,16 @@ public class Runde {
 	 * Hent ut spillerne
 	 * @return arraylist av spillerne
 	 */
-	public ArrayList<Spiller> getSpillere() {
-		return spillere;
+	public ArrayList<Bruker> getSpillere() {
+		return brukere;
 	}
 
 	/**
 	 * Hent ut nåværende spiller
 	 * @return Spiller objektet
 	 */
-	public Spiller getCurrPlayer() {
-		return this.spillere.get(currPlayer);
+	public Bruker getCurrPlayer() {
+		return this.brukere.get(currPlayer);
 	}
 
 	/**
