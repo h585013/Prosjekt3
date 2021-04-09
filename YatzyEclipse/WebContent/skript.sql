@@ -30,13 +30,12 @@ CREATE TABLE Resultat
 
 CREATE TABLE Bruker
 (	
-	spillerId SERIAL,
 	navn varchar,
 	score INTEGER, 
 	passord varchar, 
 	email varchar, 
 	brukernavn varchar,
-	PRIMARY KEY (spillerId)
+	PRIMARY KEY (brukernavn)
 );
 
 CREATE TABLE Spill
@@ -47,6 +46,8 @@ CREATE TABLE Spill
  PRIMARY KEY (spillID)
 );
 
+ALTER TABLE Resultat ADD constraint Res_fk  FOREIGN KEY (spillID) REFERENCES Spill(spillID);
+ALTER TABLE Resultat ADD constraint Res_fk2  FOREIGN KEY (spillerId) REFERENCES Bruker(spillId);
 
 
 
