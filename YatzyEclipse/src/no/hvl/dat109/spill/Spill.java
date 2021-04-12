@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import no.hvl.dat109.databaseEmmaTest.Bruker;
-import no.hvl.dat109.spiller.Spiller;
+
 
 /**
  * Spill entiteten innholder en unik id,et spillnavn valgt av spiller når
