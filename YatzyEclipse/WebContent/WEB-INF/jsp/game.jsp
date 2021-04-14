@@ -148,23 +148,11 @@
 				<div class="item terningTrill">
 					<form action="game" method="post">
 						<div class="item terninger">
-							<c:choose>
-							<c:when test="${runde.terninger eq null}">
-								<c:forEach var="i" begin="1" end="5">
-									<div>
-									<input type="checkbox" name="${t}"/>
-									<img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Dice-0.png" height="50" width="50" />
-									</div>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
 							<c:forEach var="t" items="${runde.terninger}" varStatus="count">
 								<div>
 								<input type="checkbox" name="${count.index}"/>${t.tall}
 								</div>
 							</c:forEach>
-							</c:otherwise>
-							</c:choose>
 						</div>
 
 						<!-- Trill knapp -->
