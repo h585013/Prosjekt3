@@ -17,7 +17,7 @@ import no.hvl.dat109.terningkast.Terning;
  */
 public class Runde {
 	// Objektvariabler
-	private ArrayList<Bruker> spillere;
+	private List<Bruker> spillere;
 	private int currPlayer;
 	private ArrayList<Integer> trillCount = new ArrayList<Integer>();
 	private int rundenr;
@@ -30,8 +30,7 @@ public class Runde {
 	 * 
 	 * @param spillere, spillerne som skal være med i hele spillet
 	 */
-	public Runde(ArrayList<Bruker> brukere) {
-		System.out.println("OPPRETTER RUNDEN");
+	public Runde(List<Bruker> brukere) {
 		this.spillere = brukere;
 		this.currPlayer = 0;
 		this.rundenr = 1;
@@ -141,7 +140,7 @@ public class Runde {
 	 * Hent ut spillerne
 	 * @return arraylist av spillerne
 	 */
-	public ArrayList<Bruker> getSpillere() {
+	public List<Bruker> getSpillere() {
 		return spillere;
 	}
 
