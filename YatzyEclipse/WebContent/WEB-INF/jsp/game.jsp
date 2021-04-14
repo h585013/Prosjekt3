@@ -26,110 +26,110 @@
 				</tr>
 				<tr>
 					<th>Enere</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.enere}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Toere</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.toere}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Treere</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.treere}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Firere</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.spillere}" var="r">
+						<th>${r.firere}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Femmere</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.femere}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Seksere</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.seksere}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Sum</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.sum1}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Bonus</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.bonus}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>1 par</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.etPar}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>2 par</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.toPar}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>3 like</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.treLike}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>4 like</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.fireLike}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Liten straight</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.litenStraight}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Stor straight</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.storStraight}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Hus</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.hus}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Sjanse</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.sjanse}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Yatzy</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.yatzy}</th>
 					</c:forEach>
 				</tr>
 				<tr>
 					<th>Totalsum</th>
-					<c:forEach items="${runde.spillere}" var="s">
-						<th>0</th>
+					<c:forEach items="${runde.resultat}" var="r">
+						<th>${r.totalSum}</th>
 					</c:forEach>
 				</tr>
 			</table>
@@ -187,10 +187,14 @@
 			</c:when>
 			<c:otherwise>
 				<!-- Vinnertekst -->
-				<div class="item vinnertekst"></div>
+				<div class="item vinnertekst">
+					<p>GRATULERER TIL VÅR VINNER ${runde.vinner.brukernavn}</p>
+				</div>
 
 				<!-- Nytt spill knappen -->
-				<div class="item nyttSpill"></div>
+				<div class="item nyttSpill">
+					<input type="submit" value="nyttspill" name="Nytt Spill"/>
+				</div>
 			</c:otherwise>
 		</c:choose>
 
