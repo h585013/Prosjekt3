@@ -20,7 +20,6 @@ public class Bruker {
 
 	private String email;
 
-	@Embedded
 	private String hashetPassord;
 	
 	private String salt;

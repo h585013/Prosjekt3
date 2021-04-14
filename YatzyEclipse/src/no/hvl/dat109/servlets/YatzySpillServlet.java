@@ -31,18 +31,18 @@ public class YatzySpillServlet extends HttpServlet {
 		HttpSession sesjon = request.getSession();
 
 		// Første gang vi starter spillet:
-		if (sesjon.getAttribute("runde") == null) {
-			// Henter ut spillID fra request
-			// SpillDAO for å finne spillet
-			// Hente ut alle spillerene --> liste
-			// Henter ut spillerne
-//			ArrayList<Spiller> spillere = new ArrayList<Spiller>();
-//			spillere.add(new Spiller("Anne", 1));
-//			spillere.add(new Spiller("Thea", 2));
-//			spillere.add(new Spiller("Magnus", 3));
-			Runde r = new Runde(spillere);
-			sesjon.setAttribute("runde", r);
-		}
+//		if (sesjon.getAttribute("runde") == null) {
+//			// Henter ut spillID fra request
+//			// SpillDAO for å finne spillet
+//			// Hente ut alle spillerene --> liste
+//			// Henter ut spillerne
+////			ArrayList<Spiller> spillere = new ArrayList<Spiller>();
+////			spillere.add(new Spiller("Anne", 1));
+////			spillere.add(new Spiller("Thea", 2));
+////			spillere.add(new Spiller("Magnus", 3));
+//			Runde r = new Runde(spillere);
+//			sesjon.setAttribute("runde", r);
+//		}
 
 		// hent jsp (løkke: spillere.navn) (antallSpillere -> hvor mange kolonner på
 		// brettet)
