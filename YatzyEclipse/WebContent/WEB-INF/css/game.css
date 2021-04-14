@@ -15,13 +15,11 @@ table, th, td {
 
 .container {
 	display: grid;
-	border: 1px solid black;
 	grid-template-columns: [first] 5%[line2] 50%[line3] 20%[col4-start] 25%[end];
 	grid-template-rows: [row1-start] 5%[row1-end] 5%[third-line] 25%[fourth-line]25%[fifth-line] 25%[sixth-line] 15%[last-line];
 }
 
 .brett {
-	border: 1px solid orange;
 	grid-column-start: 2;
 	grid-column-end: line3;
 	grid-row-start: row1-end;
@@ -29,7 +27,6 @@ table, th, td {
 }
 
 .spillertur {
-	border: 1px solid pink;
 	grid-column-start: 3;
 	grid-column-end: col4-start;
 	grid-row-start: row1-start;
@@ -37,31 +34,20 @@ table, th, td {
 }
 
 .terningTrill {
-	border: 1px solid cyan;
 	grid-column-start: 3;
 	grid-column-end: col4-start;
 	grid-row-start: third-line;
 	grid-row-end: last-line;
 }
 
-/*.terninger {
-	border: 1px solid green;
-	grid-column-start: 3;
-	grid-column-end: col4-start;
-	grid-row-start: third-line;
-	grid-row-end: sixth-line;
-}
-
 .trill {
-	border: 1px solid blue;
 	grid-column-start: 4;
 	grid-column-end: end;
 	grid-row-start: third-line;
 	grid-row-end: fourth-line;
-}*/
+}
 
 .marker {
-	border: 1px solid purple;
 	grid-column-start: 4;
 	grid-column-end: end;
 	grid-row-start: fourth-line;
@@ -69,11 +55,24 @@ table, th, td {
 }
 
 .trillTerning {
-	border: 1px solid red;
 	grid-column-start: 4;
 	grid-column-end: end;
 	grid-row-start: fifth-line;
 	grid-row-end: sixth-line;
+}
+
+.vinnertekst {
+	grid-column-start: 3;
+	grid-column-end: end;
+	grid-row-start: fifth-line;
+	grid-row-end: sixth-line;
+}
+
+.nyttSpill {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: sixth-line;
+	grid-row-end: last-line;
 }
 
 .check_box {
