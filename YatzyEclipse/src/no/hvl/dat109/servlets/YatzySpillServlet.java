@@ -49,10 +49,6 @@ public class YatzySpillServlet extends HttpServlet {
 			Runde r = new Runde(spillere);
 			sesjon.setAttribute("runde", r);
 		}
-
-		// hent jsp (løkke: spillere.navn) (antallSpillere -> hvor mange kolonner på
-		// brettet)
-		// sendRedirect(forward)
 		request.getRequestDispatcher("WEB-INF/game.jsp").forward(request, response);
 	}
 
@@ -68,7 +64,6 @@ public class YatzySpillServlet extends HttpServlet {
 		System.out.println("scoreHittil: " + scoreHittil.toString());
 		
 		sesjon.setAttribute("runde", r);
-
 
 		response.sendRedirect("/game");
 
