@@ -25,7 +25,7 @@ public class Runde {
 	private List<Terning> terninger;
 	private Yatzy yatzy = new Yatzy();
 	private List<Resultat> resultat = new ArrayList<Resultat>();
-	private Bruker vinner;
+	private Bruker vinner = null;
 
 	/**
 	 * Konstruktør som starter første runden
@@ -355,4 +355,13 @@ public class Runde {
 		return terninger;
 	}
 
+	public List<Resultat> getResultat() {
+		return resultat;
+	}
+
+	public Bruker getVinner() {
+		return vinner;
+	}
+
+	
 }
