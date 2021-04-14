@@ -3,6 +3,7 @@ package no.hvl.dat109.main;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.lang.reflect.*;
 
 import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.terningkast.Kopp;
@@ -24,6 +25,7 @@ public class Runde {
 	private Kopp kopp = new Kopp();
 	private List<Terning> terninger;
 	private Yatzy yatzy = new Yatzy();
+	private List<Resultat> resultat = new ArrayList<Resultat>();
 
 	/**
 	 * Konstruktør som starter første runden
@@ -38,8 +40,11 @@ public class Runde {
 		kopp.trillerTerningene();
 		this.terninger = kopp.getTerningKastArrayList();
 
-		for (Bruker s : this.spillere)
+		for (Bruker s : this.spillere) {
+			// Legger til trillCount og resultat for hver spiller
 			this.trillCount.add(0);
+			this.resultat.add(new Resultat());
+		}
 	}
 	
 	
@@ -50,7 +55,7 @@ public class Runde {
 	 * @param indekser, indeks på hvilke terninger i array som skal beholdes
 	 * @return poeng for runden hvis spilleren har trilt tre ganger, 0 ellers
 	 */
-	public int spillRunde(ArrayList<Integer> scoreHittil, Enumeration<String> indekser) {
+	public void spillRunde(Enumeration<String> indekser) {
 		boolean ferdig = this.trillCount.stream().mapToInt(t -> t).allMatch(t -> t == 3);
 		if (ferdig) { // Alle spillerne har trilt sine 3 ganger
 			// Skal da gå videre til neste runde
@@ -63,17 +68,159 @@ public class Runde {
 		} else {
 			if (this.trillCount.get(currPlayer) == 3) { // currPlayer har trilt sine tre ganger
 				// Beregn poeng for currPlayer
-				int poeng = yatzy.runde(this.rundenr, this.terninger, scoreHittil);
+				int poeng = yatzy.runde(this.rundenr, this.terninger, spillerScoreHittil());
+				
+				// Lagre poeng i resultat:
+				lagrePoeng(poeng);
+				
+				// Går videre til neste spiller
 				nesteSpiller();
 				trillAlleTerningerIgjen();
-				return poeng;
+				
 			} else {
 				// CurrPlayer får trille igjen:
 				spillerTur(indekser);
-
 			}
 		}
-		return 0;
+	}
+	
+	/**
+	 * Metode som returnerer en liste over det nåværende spiller har trilt i de tidligere rundene
+	 * @return listen
+	 */
+	private ArrayList<Integer> spillerScoreHittil() {
+		ArrayList<Integer> score = new ArrayList<Integer>();
+		Resultat res = this.resultat.get(this.currPlayer);
+		for (int i = 1; i <= this.rundenr; i++) {
+		switch (i) {
+		case 1:
+			score.add(this.resultat.get(this.currPlayer).getEnere());
+			break;
+		case 2:
+			score.add(this.resultat.get(this.currPlayer).getToere());
+			break;
+		case 3:
+			score.add(this.resultat.get(this.currPlayer).getTreere());
+			break;
+		case 4:
+			score.add(this.resultat.get(this.currPlayer).getFirere());
+			break;
+		case 5:
+			score.add(this.resultat.get(this.currPlayer).getFemere());
+			break;
+		case 6:
+			score.add(this.resultat.get(this.currPlayer).getSeksere());
+			break;
+		case 7:
+			score.add(this.resultat.get(this.currPlayer).getSum1());
+			break;
+		case 8:
+			score.add(this.resultat.get(this.currPlayer).getBonus());
+			break;
+		case 9:
+			score.add(this.resultat.get(this.currPlayer).getEtPar());
+			break;
+		case 10:
+			score.add(this.resultat.get(this.currPlayer).getToPar());
+			break;
+		case 11:
+			score.add(this.resultat.get(this.currPlayer).getTreLike());
+			break;
+		case 12:
+			score.add(this.resultat.get(this.currPlayer).getFireLike());
+			break;
+		case 13:
+			score.add(this.resultat.get(this.currPlayer).getLitenStraight());
+			break;
+		case 14:
+			score.add(this.resultat.get(this.currPlayer).getStorStraight());
+			break;
+		case 15:
+			score.add(this.resultat.get(this.currPlayer).getHus());
+			break;
+		case 16:
+			score.add(this.resultat.get(this.currPlayer).getSjanse());
+			break;
+		case 17:
+			score.add(this.resultat.get(this.currPlayer).getYatzy());
+			break;
+		case 18:
+			score.add(this.resultat.get(this.currPlayer).getTotalSum());
+			break;
+		default:
+			break;
+		
+		}
+		}
+		
+		return null;
+		
+	}
+	
+	/**
+	 * Metode som lagrer poengene for hver runde i Resultat objektet for hver spiller
+	 * @param poeng, poeng for en runde
+	 */
+	private void lagrePoeng(int poeng) {
+		switch (this.rundenr) {
+		case 1:
+			this.resultat.get(this.currPlayer).setEnere(poeng);
+			break;
+		case 2:
+			this.resultat.get(this.currPlayer).setToere(poeng);
+			break;
+		case 3:
+			this.resultat.get(this.currPlayer).setTreere(poeng);
+			break;
+		case 4:
+			this.resultat.get(this.currPlayer).setFirere(poeng);
+			break;
+		case 5:
+			this.resultat.get(this.currPlayer).setFemere(poeng);
+			break;
+		case 6:
+			this.resultat.get(this.currPlayer).setSeksere(poeng);
+			break;
+		case 7:
+			this.resultat.get(this.currPlayer).setSum1(poeng);
+			break;
+		case 8:
+			this.resultat.get(this.currPlayer).setBonus(poeng);
+			break;
+		case 9:
+			this.resultat.get(this.currPlayer).setEtPar(poeng);
+			break;
+		case 10:
+			this.resultat.get(this.currPlayer).setToPar(poeng);
+			break;
+		case 11:
+			this.resultat.get(this.currPlayer).setTreLike(poeng);
+			break;
+		case 12:
+			this.resultat.get(this.currPlayer).setFireLike(poeng);
+			break;
+		case 13:
+			this.resultat.get(this.currPlayer).setLitenStraight(poeng);
+			break;
+		case 14:
+			this.resultat.get(this.currPlayer).setStorStraight(poeng);
+			break;
+		case 15:
+			this.resultat.get(this.currPlayer).setHus(poeng);
+			break;
+		case 16:
+			this.resultat.get(this.currPlayer).setSjanse(poeng);
+			break;
+		case 17:
+			this.resultat.get(this.currPlayer).setYatzy(poeng);
+			break;
+		case 18:
+			this.resultat.get(this.currPlayer).setTotalSum(poeng);
+			break;
+		default:
+			break;
+		
+		}
 	}
 	
 	/**

@@ -25,7 +25,6 @@ import no.hvl.dat109.spill.Spill;
 public class YatzySpillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private ArrayList<Integer> scoreHittil = new ArrayList<Integer>();
 	private SpillDAO spilldao = new SpillDAO();
 
 	@Override
@@ -59,9 +58,7 @@ public class YatzySpillServlet extends HttpServlet {
 
 		HttpSession sesjon = request.getSession();
 		Runde r = (Runde) sesjon.getAttribute("runde");
-		int s = r.spillRunde(scoreHittil, request.getParameterNames());
-		scoreHittil.add(s);
-		System.out.println("scoreHittil: " + scoreHittil.toString());
+		r.spillRunde(request.getParameterNames());
 		
 		sesjon.setAttribute("runde", r);
 
