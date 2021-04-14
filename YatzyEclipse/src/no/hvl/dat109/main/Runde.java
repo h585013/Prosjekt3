@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import no.hvl.dat109.databaseEmmaTest.Bruker;
-
+import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.terningkast.Kopp;
 import no.hvl.dat109.terningkast.Terning;
 

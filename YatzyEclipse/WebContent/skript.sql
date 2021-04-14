@@ -28,13 +28,20 @@ CREATE TABLE Resultat
    PRIMARY KEY (spillID, brukernavn)
 );
 
+CREATE TABLE Passord
+(
+	pwd_hash varchar,
+	pwd_salt varchar
+);
+
 CREATE TABLE Bruker
 (	
-	spillerId SERIAL,
-	navn varchar,
+	brukernavn varchar
 	score INTEGER, 
 	passord varchar, 
+	spill varchar, 
 	email varchar, 
+	salt varchar,
 	PRIMARY KEY (brukernavn)
 );
 

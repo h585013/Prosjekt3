@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import no.hvl.dat109.databaseEmmaTest.Bruker;
+import no.hvl.dat109.registreringOgLogin.Bruker;
 
 
 /**

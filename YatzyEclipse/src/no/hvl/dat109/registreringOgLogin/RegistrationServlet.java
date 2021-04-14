@@ -1,4 +1,4 @@
-package no.hvl.dat109.databaseEmmaTest;
+package no.hvl.dat109.registreringOgLogin;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -39,21 +39,31 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String requestData = request.getReader().lines().collect(Collectors.joining());
-
-//		String requestData[] = request.getReader().
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-		Bruker brukerRegistrering = objectMapper.readValue(requestData, Bruker.class);
+		BrukerRequest brukerRequest = objectMapper.readValue(requestData, BrukerRequest.class);
 		
-		
-		if(dao.leggTilBruker(brukerRegistrering)){
-			//Om det gikk greit :)
-			request.getSession().setAttribute("brukernavn", brukerRegistrering.getBrukernavn());
-			response.setStatus(HttpServletResponse.SC_CREATED); 
-		}else {
-			// Om det ikke gikk greit :(
+		if(!BrukerRequestService.matcherPassord(brukerRequest.getPassord(), brukerRequest.getPassordRepeat())) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT); 
+		}else {
+
+			String salt = PassordHjelper.genererTilfeldigSalt();
+			String hashetPassord= PassordHjelper.hashMedSalt(brukerRequest.getPassord(), salt);
+			
+			Bruker nyBruker = new Bruker(
+					brukerRequest.getBrukernavn(), 
+					brukerRequest.getEmail(), hashetPassord, PassordHjelper.genererTilfeldigSalt(), null, 0);
+			
+			if(dao.leggTilBruker(nyBruker)){
+				//Om det gikk greit :)
+				request.getSession().setAttribute("brukernavn", brukerRequest.getBrukernavn());
+				response.setStatus(HttpServletResponse.SC_CREATED); 
+			}else {
+				// Om det ikke gikk greit :(
+				response.setStatus(HttpServletResponse.SC_CONFLICT); 
+			}
 		}
+		
 
 		
 		

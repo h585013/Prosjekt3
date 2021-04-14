@@ -1,7 +1,6 @@
-	package no.hvl.dat109.databaseEmmaTest;
+	package no.hvl.dat109.registreringOgLogin;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -9,8 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import no.hvl.dat109.dao.BrukerDAO;
 
@@ -56,7 +53,9 @@ public class LoginServlet extends HttpServlet {
 		if (b == null) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 		} else {
-			if (dao.matcherPassord(b, passord)) {
+			
+			
+			if (PassordHjelper.validerMedSalt(passord, b.getSalt(), b.getPassord())) {
 
 				request.getSession().setAttribute("brukernavn", b.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_OK);

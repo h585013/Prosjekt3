@@ -6,7 +6,7 @@ import javax.ejb.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.databaseEmmaTest.Bruker;
+import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.spill.Spill;
 
 @Stateless

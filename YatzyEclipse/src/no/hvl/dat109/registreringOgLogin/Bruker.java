@@ -1,5 +1,6 @@
-package no.hvl.dat109.databaseEmmaTest;
+package no.hvl.dat109.registreringOgLogin;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -19,8 +20,10 @@ public class Bruker {
 
 	private String email;
 
-	// TODO: er faktisk ikke hashet / saltet enda. 100% i klartekst. 
-	private String passord;
+	@Embedded
+	private String hashetPassord;
+	
+	private String salt;
 
 //	private String salt;
 	
@@ -29,6 +32,16 @@ public class Bruker {
 	private Spill spill;
 	
 	int score;
+	
+	public Bruker(String brukernavn, String email, String passord, String salt, Spill spill, int score) {
+		
+		this.brukernavn = brukernavn;
+		this.email = email;
+		this.hashetPassord = passord;
+		this.spill = spill;
+		this.score = score;
+		this.salt = salt;
+	}
 
 
 	public Spill getSpill() {
@@ -60,11 +73,19 @@ public class Bruker {
 	}
 	
 	public String getPassord() {
-		return passord;
+		return hashetPassord;
 	}
 	
 	public void setPassord(String pass) {
-		passord = pass;
+		hashetPassord = pass;
+	}
+	
+	public String getSalt() {
+		return salt;
+	}
+	
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 	
 	

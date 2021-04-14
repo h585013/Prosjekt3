@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import no.hvl.dat109.dao.BrukerDAO;
 import no.hvl.dat109.dao.SpillDAO;
-import no.hvl.dat109.databaseEmmaTest.Bruker;
+import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.spill.Spill;
 
 /**

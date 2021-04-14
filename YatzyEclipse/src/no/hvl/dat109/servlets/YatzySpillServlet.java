@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import no.hvl.dat109.main.Runde;
-import no.hvl.dat109.main.Yatzy;
-import no.hvl.dat109.spiller.Spiller;
 
 /**
  * Implementasjon av å faktisk spille spillet

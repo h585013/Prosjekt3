@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import no.hvl.dat109.dao.BrukerDAO;
-import no.hvl.dat109.databaseEmmaTest.Bruker;
+import no.hvl.dat109.registreringOgLogin.Bruker;
 
 
 /**

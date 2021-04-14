@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import no.hvl.dat109.databaseEmmaTest.Bruker;
+import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.spill.Spill;
 
 
@@ -33,12 +33,6 @@ public class BrukerDAO {
 	public Bruker finnBruker(String brukernavn) {
 		return em.find(Bruker.class, brukernavn);
 	}
-
-	public boolean matcherPassord(Bruker b, String pass) {
-		return b.getPassord().equals(pass);
-	}
-
-	// burde nok ikke være her
 
 	@Transactional
 	public boolean leggTilBruker(Bruker b) {
