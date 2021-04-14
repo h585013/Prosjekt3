@@ -2,6 +2,7 @@ package no.hvl.dat109.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import no.hvl.dat109.dao.SpillDAO;
 import no.hvl.dat109.main.Runde;
+import no.hvl.dat109.registreringOgLogin.Bruker;
+import no.hvl.dat109.spill.Spill;
 
 /**
  * Implementasjon av å faktisk spille spillet
@@ -22,6 +26,7 @@ public class YatzySpillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private ArrayList<Integer> scoreHittil = new ArrayList<Integer>();
+	private SpillDAO spilldao = new SpillDAO();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,14 +37,15 @@ public class YatzySpillServlet extends HttpServlet {
 
 		// Første gang vi starter spillet:
 		if (sesjon.getAttribute("runde") == null) {
-			// Henter ut spillID fra request
+			// Henter ut spillID som er sendt fra venterom
+			int spillID = (int) sesjon.getAttribute("spillID");
+			
 			// SpillDAO for å finne spillet
+			Spill s = spilldao.finnSpill(spillID);
+			
 			// Hente ut alle spillerene --> liste
-			// Henter ut spillerne
-//			ArrayList<Spiller> spillere = new ArrayList<Spiller>();
-//			spillere.add(new Spiller("Anne", 1));
-//			spillere.add(new Spiller("Thea", 2));
-//			spillere.add(new Spiller("Magnus", 3));
+			List<Bruker> spillere = s.getBrukere();
+			
 			Runde r = new Runde(spillere);
 			sesjon.setAttribute("runde", r);
 		}
