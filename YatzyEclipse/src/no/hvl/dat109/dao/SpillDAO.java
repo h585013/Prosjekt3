@@ -11,7 +11,7 @@ import no.hvl.dat109.spill.Spill;
 
 @Stateless
 public class SpillDAO {
-	@PersistenceContext(name = "spillPU")
+	@PersistenceContext(name = "yatzyPU")
 	private EntityManager em;
 
 	private List<Bruker> brukere;
