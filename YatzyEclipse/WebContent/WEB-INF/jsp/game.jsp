@@ -146,7 +146,7 @@
 			<c:when test="${vinner eq null}">
 				<!-- Terningene -->
 				<div class="item terningTrill">
-					<form action="game" method="post">
+					<form action="YatzySpill" method="post">
 						<div class="item terninger">
 							<c:forEach var="t" items="${runde.terninger}" varStatus="count">
 								<div>
