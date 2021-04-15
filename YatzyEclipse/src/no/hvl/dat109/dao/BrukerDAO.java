@@ -20,12 +20,8 @@ public class BrukerDAO {
 	public boolean brukernavnLedig(String navn) {
 
 //		Bruker b = em.find(Bruker.class, navn);
-<<<<<<< Updated upstream
-		//return em.createQuery("SELECT g FROM Utleiegruppe g WHERE g.beskrivelse=:beskrivelse", Utleiegruppe.class).setParameter("beskrivelse", beskrivelse).getSingleResult();
-		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn=:navn", Bruker.class).setParameter("navn", navn).getSingleResult();
-=======
+
 		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn LIKE :name", Bruker.class).setParameter("name", navn).getSingleResult();
->>>>>>> Stashed changes
 		
 		
 		return b == null;
