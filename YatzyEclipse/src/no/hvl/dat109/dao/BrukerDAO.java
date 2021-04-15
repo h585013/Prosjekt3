@@ -31,6 +31,7 @@ public class BrukerDAO {
 		
 		return false;
 	}
+	
 
 	public boolean epostLedig(String epost) {
 		try {

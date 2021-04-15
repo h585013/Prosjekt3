@@ -16,11 +16,11 @@ public class SpillDAO {
 
 	private List<Bruker> brukere;
 	public int leggTilSpill(Spill spill) {
-		em.persist(spill);
-		em.flush();
-		return spill.getSpillID();
+		em.merge(spill);
+		//em.flush();
+		//spill.getSpillID()
+		return 0 ;
 	}
-
 	public Spill finnSpill(int id) {
 		return em.find(Spill.class, id);
 	}
