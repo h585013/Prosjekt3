@@ -17,7 +17,7 @@ import no.hvl.dat109.dao.BrukerDAO;
 /**
  * Servlet implementation class RegistrationServlet
  */
-@WebServlet("/registrer")
+@WebServlet(name="RegistrationServlet", urlPatterns = { "/registrer" }) //name = "ForsideServlet", urlPatterns = { "/forside" }
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
