@@ -32,4 +32,8 @@ public class SpillDAO {
 	public void slettSpill(Spill spill) {
 	em.remove(spill);
 	}
+	
+	public List<Spill> hentSpillereMedId(int id) {
+		return em.createQuery("Select spillnavn from Spill where spillid = " + id,Spill.class).getResultList();
+	}
 }
