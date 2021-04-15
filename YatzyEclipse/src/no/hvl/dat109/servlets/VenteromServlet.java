@@ -18,7 +18,7 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 /**
  * Servlet implementation class VenteromServlet
  */
-@WebServlet("/VenteromServlet")
+@WebServlet("/Venterom")
 public class VenteromServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -28,6 +28,8 @@ public class VenteromServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		List<Bruker> spillere = dao.hentAlle();
+		int id = (int) request.getAttribute("spillID");
+		
 		request.setAttribute("spillerListe", spillere);	
 		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
