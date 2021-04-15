@@ -10,9 +10,8 @@
 <form action="Forside" method="post">
   <fieldset>
 <legend>Finn et spill og delta</legend>
-<p>Spill Navn: <input type="text" name="spillNavn" />
-
 <p><input type="submit" value="Registrer" /></p>
+	<button type="button">Delta!</button>
   </fieldset>
 </form>
 </body>
