@@ -137,7 +137,7 @@
 
 		<!-- Spiller X sin tur -->
 		<div class="item spillertur">
-			<p>${runde.currPlayer.navn} sin tur!</p>
+			<p>${runde.currPlayer.brukernavn} sin tur!</p>
 		</div>
 
 
