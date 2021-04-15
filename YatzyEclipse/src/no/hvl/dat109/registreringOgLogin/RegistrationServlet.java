@@ -26,14 +26,14 @@ public class RegistrationServlet extends HttpServlet {
 	private BrukerDAO dao;
 	
 
-
+	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	
 		request.getRequestDispatcher("WEB-INF/jsp/registrer.jsp").forward(request, response);
 	}
 
-
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String brukernavn = request.getParameter("brukernavn");
