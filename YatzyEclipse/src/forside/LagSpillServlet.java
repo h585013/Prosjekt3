@@ -53,13 +53,14 @@ public class LagSpillServlet extends HttpServlet {
 		Spill spill = new Spill(spillNavn);
 		//legger til i databasen
 		spilldao.leggTilSpill(spill);
-		System.out.println(spill.getSpillID() + "spilleid");
+		//System.out.println(spill.getSpillID() + "spilleid");
 		
 		//henter automatisk generert spillID
 		//int spillid = spilldao.hentSpillID();
 		//legger til spillID til brukeren 
 		
-		//Bruker b = brukerdao.finnBruker(brukernavn);
+		Bruker b = brukerdao.finnBruker(brukernavn);
+		b.set
 		
 		//brukerdao.leggTilSpill(brukernavn, spill);
 

@@ -41,6 +41,12 @@ public class Spill {
 	public Spill() {
 
 	}
+	
+	
+
+	public void setSpillID(int spillID) {
+		this.spillID = spillID;
+	}
 
 	public int getSpillID() {
 		return spillID;
