@@ -101,7 +101,7 @@ public class Runde {
 					indeksVinner = i;
 				}
 			}
-			vinner = this.spillere.get(indeksVinner);
+			this.vinner = this.spillere.get(indeksVinner);
 		}
 	}
 
