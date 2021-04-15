@@ -8,13 +8,13 @@
 <title>Delta i Spill</title>
 </head>
 <body>
-	<form action="Forside" method="post">
+	<form action="DeltaISpill" method="post">
 		<fieldset>
 			<legend>Finn et spill og delta</legend>
 			<c:forEach items="${ledigeSpill}" var="s">
 				<input type="radio" name="${s.spillID}" /> ${s.spillNavn} 
 			</c:forEach>
-			<button type="button">Delta!</button>
+			<input type="submit" value="Delta!"/>
 		</fieldset>
 	</form>
 </body>
