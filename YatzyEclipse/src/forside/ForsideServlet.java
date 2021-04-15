@@ -43,8 +43,7 @@ public class ForsideServlet extends HttpServlet {
 		System.out.println("dette er handling:  " + handling);
 		if(handling.equals("lagSpill")) {
 			response.sendRedirect("/Prosjekt3/LagSpillServlet");
-		}
-		if(handling.equals("deltaSpill")) {
+		}else {
 			response.sendRedirect("/Prosjekt3/DeltaISpill");
 		}
 		
