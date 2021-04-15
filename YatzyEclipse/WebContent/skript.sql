@@ -35,10 +35,11 @@ CREATE TABLE Bruker
 (	
 	brukernavn varchar,
 	score INTEGER, 
-	passord varchar, 
+	hashetPassord varchar, 
 	spill varchar, 
 	email varchar, 
 	salt varchar,
+	spillID integer,
 	PRIMARY KEY (brukernavn)
 );
 
@@ -51,6 +52,7 @@ CREATE TABLE Spill
 
 ALTER TABLE Resultat ADD constraint Res_fk  FOREIGN KEY (spillID) REFERENCES Spill(spillID);
 ALTER TABLE Resultat ADD constraint Res_fk2  FOREIGN KEY (brukernavn) REFERENCES Bruker(brukernavn);
+ALTER TABLE Bruker ADD constraint spill_fk FOREIGN KEY (spillID) references Spill(spillID);
 
 
 

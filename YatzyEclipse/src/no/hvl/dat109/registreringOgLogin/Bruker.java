@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import no.hvl.dat109.spill.Spill;
 
 @Entity
-@Table(schema = "public", name = "bruker")
+@Table(schema = "yatzy", name = "bruker")
 public class Bruker {
 
 	@Id
@@ -26,7 +26,7 @@ public class Bruker {
 	
 	@ManyToOne
 	@JoinColumn(name = "spillID", referencedColumnName = "spillID")
-	private Spill spill;
+	private Spill spillID;
 	
 	int score;
 	
@@ -35,18 +35,18 @@ public class Bruker {
 		this.brukernavn = brukernavn;
 		this.email = email;
 		this.hashetPassord = passord;
-		this.spill = spill;
+		this.spillID = spill;
 		this.score = score;
 		this.salt = salt;
 	}
 
 
 	public Spill getSpill() {
-		return spill;
+		return spillID;
 	}
 
 	public void setSpill(Spill spill) {
-		this.spill = spill;
+		this.spillID = spill;
 	}
 
 	public Bruker() {
