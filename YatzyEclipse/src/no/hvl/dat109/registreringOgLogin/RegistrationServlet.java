@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import no.hvl.dat109.dao.BrukerDAO;
 
 /**
@@ -60,7 +58,7 @@ public class RegistrationServlet extends HttpServlet {
 				request.getSession().setAttribute("brukernavn", brukerRequest.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_CREATED); 
 				
-				response.sendRedirect("/Prosjekt3/Forside"); // //
+				response.sendRedirect("/Prosjekt3/Forside");
 			}else {
 				// Om det ikke gikk greit :(
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
