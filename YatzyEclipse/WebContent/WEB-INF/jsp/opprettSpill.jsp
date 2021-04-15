@@ -7,7 +7,7 @@
 <title>Opprett Spill</title>
 </head>
 <body>
-	<form action="Forside" method="post">
+	<form action="LagSpillServlet" method="post">
 		<fieldset>
 			<legend>lag ditt eget spill</legend>
 			<p>
