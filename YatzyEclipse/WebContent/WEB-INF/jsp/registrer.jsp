@@ -12,25 +12,18 @@
 
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
 	<form action="registrer" method="post">
 		<fieldset>
 			<legend>Registrering</legend>
-
-
-
-			<label for="brukernavn">Brukernavn:</label><br> <input
-				type="text" id="brukernavn" name="brukernavn"><br> <label
-				for="epost">Epost:</label><br> <input type="text" id="epost"
-				name="epost"> <label for="passord">Passord:</label><br>
+			
+			<label for="brukernavn">Brukernavn:</label><br> 
+			<input type="text" id="brukernavn" name="brukernavn"><br> 
+			<label for="epost">Epost:</label><br> <input type="text" id="epost" name="epost"><br> 
+			<label for="passord">Passord:</label><br>
 			<input type="password" id="passord" name="passord"><br>
 
-			<label for="passordRepeat">Repeter passord:</label><br> <input
-				type="password" id="passordRepeat" name="passordRepeat">
-
-
+			<label for="passordRepeat">Repeter passord:</label><br> 
+			<input type="password" id="passordRepeat" name="passordRepeat">
 			<p>
 				<input type="submit" value="Registrer" />
 			</p>
@@ -38,9 +31,6 @@
 	</form>
 
 
-	<br>
-	<br>
-	<br>
 	<br>
 	<br>
 	<form action="login" method="get">

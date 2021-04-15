@@ -59,6 +59,7 @@ public class LoginServlet extends HttpServlet {
 
 				request.getSession().setAttribute("brukernavn", b.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_OK);
+				response.sendRedirect("/Forside");
 
 			} else {
 
