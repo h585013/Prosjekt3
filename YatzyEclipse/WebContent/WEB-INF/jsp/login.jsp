@@ -9,9 +9,7 @@
 <body>
 
 	<h1>Login</h1>
-	<br>
-	<br>
-	<br>
+
 	<br>
 	<br>
 	<form action="login" method="post">
@@ -28,13 +26,10 @@
 			</p>
 		</fieldset>
 	</form>
-
+	
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<form action="registrering" method="get">
+	<form action="registrer" method="get">
 		<input type="submit" value="Registrer deg!">
 	</form>
 </body>
