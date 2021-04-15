@@ -7,9 +7,19 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
+
+	<h1>Registrasjon</h1>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<form action="registrer" method="post">
 		<fieldset>
 			<legend>Registrering</legend>
+
+
 
 			<label for="brukernavn">Brukernavn:</label><br> <input
 				type="text" id="brukernavn" name="brukernavn"><br> <label
@@ -26,9 +36,13 @@
 			</p>
 		</fieldset>
 	</form>
-	
-	
-	<br><br><br><br><br>
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<form action="login" method="get">
 		<input type="submit" value="Jeg har allerede en bruker!">
 	</form>
