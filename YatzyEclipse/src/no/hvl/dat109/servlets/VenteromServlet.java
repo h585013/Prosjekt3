@@ -22,7 +22,7 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 
 /**
  * Servlet implementation class VenteromServlet
- * @author vilde
+ * @author vilde hagtvedt
  */
 
 @WebServlet("/Venterom")
