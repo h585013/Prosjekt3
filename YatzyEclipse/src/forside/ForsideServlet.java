@@ -30,6 +30,7 @@ public class ForsideServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		HttpSession sesjon = request.getSession();
 		String brukernavn= (String) sesjon.getAttribute("brukernavn");
 		if (sesjon != null) {
@@ -39,10 +40,10 @@ public class ForsideServlet extends HttpServlet {
 		sesjon = request.getSession(true);
 		sesjon.setAttribute("brukernavn", brukernavn);
 		String handling= request.getParameter("handling");
-		if(handling=="lagSpill") {
+		if(handling.equals("lagSpill")) {
 			response.sendRedirect("/LagSpillServlet");
 		}
-		if(handling=="deltaSpill") {
+		if(handling.equals("deltaSpill")) {
 			response.sendRedirect("/DeltaISpill");
 		}
 		
