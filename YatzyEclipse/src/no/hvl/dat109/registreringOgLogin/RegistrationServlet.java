@@ -35,7 +35,6 @@ public class RegistrationServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		String brukernavn = request.getParameter("brukernavn");
 		String passord = request.getParameter("passord");
 		String passordRepeat = request.getParameter("passordRepeat");
@@ -46,6 +45,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		if(!BrukerRequestService.matcherPassord(brukerRequest.getPassord(), brukerRequest.getPassordRepeat())) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT); 
+			response.sendRedirect("/registrer");
 		}else {
 
 			String salt = PassordHjelper.genererTilfeldigSalt();
@@ -63,7 +63,8 @@ public class RegistrationServlet extends HttpServlet {
 				response.sendRedirect("/Forside");
 			}else {
 				// Om det ikke gikk greit :(
-				response.setStatus(HttpServletResponse.SC_CONFLICT); 
+				response.setStatus(HttpServletResponse.SC_CONFLICT);
+				response.sendRedirect("/Prosjekt3/registrer");
 				
 			}
 		}
