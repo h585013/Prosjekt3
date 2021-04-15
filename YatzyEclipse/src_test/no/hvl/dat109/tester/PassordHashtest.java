@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.registreringOgLogin.PassordHjelper;
@@ -53,6 +51,16 @@ public class PassordHashtest {
 	@Test
 	public void validerRiktigPassord() {
 		assertTrue(PassordHjelper.validerMedSalt(passord, salt, hashetPassord));
+	}
+	
+	@Test 
+	public void validerRiktigPassordMedSAltFraBruker() {
+		assertTrue(PassordHjelper.validerMedSalt(passord, testBruker.getSalt(), hashetPassord));
+	}
+	
+	@Test 
+	public void validerRiktigPassordMedSaltOgHashetPAssordFraBruker() {
+		assertTrue(PassordHjelper.validerMedSalt(passord, testBruker.getSalt(), testBruker.getPassord()));
 	}
 
 	@Test
