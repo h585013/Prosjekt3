@@ -6,12 +6,12 @@ import javax.persistence.IdClass;
 
 
 
-@Entity(name = "Resultat")
-@Table(name = "resultat")
+@Entity
+@Table(schema = "Yatzy",name = "resultat")
 public class Resultat {
-	@EmbeddedId
-	private ResultatID id;
-
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 	private int enere;
 	private int toere;
 	private int treere;
@@ -33,9 +33,7 @@ public class Resultat {
 	
 	
 	
-	public ResultatID getId() {
-		return id;
-	}
+	
 	public int getEnere() {
 		return enere;
 	}
