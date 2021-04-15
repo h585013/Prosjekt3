@@ -39,7 +39,9 @@ CREATE TABLE Bruker
 	spill varchar, 
 	email varchar, 
 	salt varchar,
+	spillID integer,
 	PRIMARY KEY (brukernavn)
+	FOREIGN KEY (spillID) references Spill(spillID)
 );
 
 CREATE TABLE Spill
