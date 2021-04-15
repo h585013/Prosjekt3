@@ -5,6 +5,7 @@ SET search_path = yatzy;
 
 CREATE TABLE Resultat 
 (
+	resultatID SERIAL,
    spillID INTEGER, --Finn ut
    brukernavn varchar, --Finn ut 
    enere INTEGER, 
@@ -25,7 +26,9 @@ CREATE TABLE Resultat
    sjanse INTEGER, 
    yatzy INTEGER, 
    totalSum INTEGER, 
-   PRIMARY KEY (spillID, brukernavn)
+   
+   PRIMARY KEY (resultatID)
+   
 );
 
 CREATE TABLE Bruker
