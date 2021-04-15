@@ -50,11 +50,18 @@ public class DeltaISpillServlet extends HttpServlet {
 		Bruker bruker = brukerdao.finnBruker(brukernavn);
 		s.leggTilBruker(bruker);
 		
+		if (sesjon != null) {
+			sesjon.invalidate();
+		}
+		sesjon = request.getSession(true);
+		sesjon.setAttribute("brukernavn", brukernavn);
+		sesjon.setAttribute("spillID", spillID);
+		response.sendRedirect("/VenteromServlet");
 		
 		
 	}
 
-	}
+}
 	
 	
 
