@@ -22,27 +22,27 @@ public class BrukerDAO {
 //		Bruker b = em.find(Bruker.class, navn);
 		try {
 			if(em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult() == null) {
-				return false;
+				return true;
 			}
 			
 		} catch(Exception e) {
-			return false;
+			return true;
 		}
 		
-		return true;
+		return false;
 	}
 
 	public boolean epostLedig(String epost) {
 		try {
 			if(	em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult() == null) {
-				return false;
+				return true;
 			}
 			
 		} catch(Exception e) {
-			return false;
+			return true;
 		}
 		
-		return true;
+		return false;
 
 		
 	}
