@@ -20,7 +20,7 @@ import no.hvl.dat109.spill.Spill;
 /**
  * Servlet implementation class DeltaISpillServlet
  */
-@WebServlet("/DeltaISpillServlet")
+@WebServlet("/DeltaISpill")
 public class DeltaISpillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 		
