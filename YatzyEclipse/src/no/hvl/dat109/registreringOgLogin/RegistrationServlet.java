@@ -25,22 +25,15 @@ public class RegistrationServlet extends HttpServlet {
 	@EJB
 	private BrukerDAO dao;
 	
-    /**
-     * Default constructor. 
-     */
-    public RegistrationServlet() {
-        // TODO Auto-generated constructor stub
-    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		request.getRequestDispatcher("WEB-INF/jsp/registrer.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String requestData = request.getReader().lines().collect(Collectors.joining());
