@@ -27,8 +27,8 @@
 				name="epost"> <label for="passord">Passord:</label><br>
 			<input type="password" id="passord" name="passord"><br>
 
-			<label for="passwordRepeat">Repeter passord:</label><br> <input
-				type="password" id="passwordRepeat" name="passwordRepeat">
+			<label for="passordRepeat">Repeter passord:</label><br> <input
+				type="password" id="passordRepeat" name="passordRepeat">
 
 
 			<p>
