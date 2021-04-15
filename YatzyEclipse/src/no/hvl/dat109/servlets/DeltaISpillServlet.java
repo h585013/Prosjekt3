@@ -48,8 +48,20 @@ public class DeltaISpillServlet extends HttpServlet {
 		
 	HttpSession sesjon = request.getSession();
 	
-	String params = request.getParameterNames().nextElement();
-	System.out.println("Params = " + params);
+	
+	Enumeration<String> params = request.getParameterNames();
+	if (params.hasMoreElements()) {
+		int spillID = Integer.parseInt(params.nextElement());
+		Bruker b = brukerdao.finnBruker((String) sesjon.getAttribute("brukernavn"));
+		Spill spill = spilldao.finnSpill(spillID);
+		b.setSpillID(spill);
+		brukerdao.leggTilSpill(b.getBrukernavn(), spill);
+		
+		response.sendRedirect("/Prosjekt3/Venterom");
+	} else {
+		response.sendRedirect("/Prosjekt3/DeltaISpill");
+	}
+	
 //	while (params.hasMoreElements()) 
 //		System.out.println(params.nextElement());
 	
