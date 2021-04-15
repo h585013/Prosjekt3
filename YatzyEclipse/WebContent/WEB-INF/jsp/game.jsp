@@ -21,7 +21,7 @@
 				<tr>
 					<th></th>
 					<c:forEach items="${runde.spillere}" var="s">
-						<th>${s.navn}</th>
+						<th>${s.brukernavn}</th>
 					</c:forEach>
 				</tr>
 				<tr>
