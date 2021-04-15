@@ -49,13 +49,22 @@ public class LagSpillServlet extends HttpServlet {
 		// String spillNavnEscaped = request.getParameter("spillNavn");
 		// System.out.println("dette er spillnavn escaped "+ spillNavnEscaped);
 
+		// oppretter spill objekt 
 		Spill spill = new Spill(spillNavn);
-
-		Bruker b = brukerdao.finnBruker(brukernavn);
-		brukerdao.leggTilSpill(brukernavn, spill);
-
-		spill.leggTilBruker(b);
+		//legger til i databasen
 		spilldao.leggTilSpill(spill);
+		System.out.println(spill.getSpillID() + "spilleid");
+		
+		//henter automatisk generert spillID
+		//int spillid = spilldao.hentSpillID();
+		//legger til spillID til brukeren 
+		
+		//Bruker b = brukerdao.finnBruker(brukernavn);
+		
+		//brukerdao.leggTilSpill(brukernavn, spill);
+
+		//spill.leggTilBruker(b);
+		
 
 		if (sesjon != null) {
 			sesjon.invalidate();
