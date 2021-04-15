@@ -23,8 +23,6 @@ public class Bruker {
 	private String hashetPassord;
 	
 	private String salt;
-
-//	private String salt;
 	
 	@ManyToOne
 	@JoinColumn(name = "spillID", referencedColumnName = "spillID")
