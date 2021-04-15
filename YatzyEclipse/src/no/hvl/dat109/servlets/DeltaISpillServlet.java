@@ -20,7 +20,7 @@ import no.hvl.dat109.spill.Spill;
 /**
  * Servlet implementation class DeltaISpillServlet
  */
-@WebServlet("/DeltaISpillServlet")
+@WebServlet("/DeltaISpill") 
 public class DeltaISpillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 		
@@ -33,6 +33,10 @@ public class DeltaISpillServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
+		
+		List<Spill> ledigeSpill = spilldao.hentAlle();
+		
+		request.setAttribute("ledigeSpill", ledigeSpill);
 	}
 
 
@@ -40,9 +44,12 @@ public class DeltaISpillServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		HttpSession sesjon = request.getSession();
+	HttpSession sesjon = request.getSession();
+	
+	response.sendRedirect("/VenteromServlet");
+	
 		
-		String brukernavn = (String) sesjon.getAttribute("brukernavn");
+		/**	String brukernavn = (String) sesjon.getAttribute("brukernavn");
 		
 		int spillID = (int) sesjon.getAttribute("spillID");
 		
@@ -56,9 +63,7 @@ public class DeltaISpillServlet extends HttpServlet {
 		}
 		sesjon = request.getSession(true);
 		sesjon.setAttribute("brukernavn", brukernavn);
-		sesjon.setAttribute("spillID", spillID);
-		response.sendRedirect("/VenteromServlet");
-		
+		sesjon.setAttribute("spillID", spillID);**/
 		
 	}
 
