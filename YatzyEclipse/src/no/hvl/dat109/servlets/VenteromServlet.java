@@ -35,7 +35,7 @@ public class VenteromServlet extends HttpServlet {
 		
 		int id = (int) sesjon.getAttribute("spillID");
 		List<Bruker> spiller = dao.hentAlle();
-		List<Bruker> spillerListe = spiller.stream().filter(x -> x.getSpillID().getSpillID() == id).collect(Collectors.toList());
+		List<Bruker> spillerListe = spiller.stream().filter(y -> y.getSpillID()!= null).filter(x -> x.getSpillID().getSpillID() == id).collect(Collectors.toList());
 		sesjon.setAttribute("spillerListe", spillerListe);	
 		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
