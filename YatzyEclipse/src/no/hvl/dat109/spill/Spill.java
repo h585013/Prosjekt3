@@ -23,35 +23,21 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
  */
 
 @Entity
-@Table(schema = "yatzy", name = "spil")
+@Table(schema = "yatzy", name = "spill")
 public class Spill {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int spillID;
-	public int getSpillID() {
-		return spillID;
-	}
-
 	
-	public void setBrukere(List<Bruker> brukere) {
-		this.brukere = brukere;
-	}
-
+	
 	private String spillNavn;
 	private String admin;
-
 	@OneToMany(mappedBy = "spillID", fetch = FetchType.EAGER)
 	private List<Bruker> brukere;
 
-	/**
-	 * Konstrukt�r
-	 * 
-	 * 
-	 * @param spillNavn
-	 * @param admin
-	 * 
-	 */
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int spillID;
+	
 	public Spill(String spillNavn, String admin) {
 
 		this.spillNavn = spillNavn;
@@ -62,6 +48,16 @@ public class Spill {
 	public Spill() {
 
 	}
+	
+	public int getSpillID() {
+		return spillID;
+	}
+
+	
+	public void setBrukere(List<Bruker> brukere) {
+		this.brukere = brukere;
+	}
+	
 
 	public String getSpillNavn() {
 		return spillNavn;
