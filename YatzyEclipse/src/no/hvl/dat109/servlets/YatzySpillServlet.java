@@ -78,7 +78,7 @@ public class YatzySpillServlet extends HttpServlet {
 		
 		sesjon.setAttribute("runde", r);
 
-		response.sendRedirect("/game");
+		response.sendRedirect("/Prosjekt3/YatzySpill");
 
 	}
 
