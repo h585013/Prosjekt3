@@ -34,7 +34,7 @@ public class DeltaISpillServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
 		
-		List<Bruker> ledigeSpill = spilldao.hentAlle();
+		List<Spill> ledigeSpill = spilldao.hentAlle();
 		
 		request.setAttribute("ledigeSpill", ledigeSpill);
 	}
