@@ -40,6 +40,7 @@ public class ForsideServlet extends HttpServlet {
 		sesjon = request.getSession(true);
 		sesjon.setAttribute("brukernavn", brukernavn);
 		String handling= request.getParameter("handling");
+		System.out.println("dette er handling:  " + handling);
 		if(handling.equals("lagSpill")) {
 			response.sendRedirect("/Prosjekt3/LagSpillServlet");
 		}
