@@ -62,7 +62,7 @@ public class LagSpillServlet extends HttpServlet {
 			// legger til nytt spillobjekt til brukeren
 			Bruker b = brukerdao.finnBruker(brukernavn);
 			b.setSpillID(nyttspill);
-			brukerdao.leggTilSpill(brukernavn, spill);
+			brukerdao.leggTilSpill(brukernavn, nyttspill);
 
 			sesjon.setAttribute("brukernavn", brukernavn);
 			sesjon.setAttribute("spillnavn", spillNavn);
