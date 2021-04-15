@@ -2,7 +2,9 @@
 
 
 
-
+/**
+*@author vilde hagtvedt
+*/
 
 /**
  * Laster inn -> Venter på spillere
