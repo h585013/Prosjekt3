@@ -51,6 +51,15 @@ public class DeltaISpillServlet extends HttpServlet {
 	while (params.hasMoreElements()) 
 		System.out.println(params.nextElement());
 	
+	// hente ut spillID
+	// registrere spillID på brukeren vår
+	// videre til venterom:
+	
+	// hvis ingen parametre: tilbake til vanlig
+	
+	
+	
+	
 	
 //	response.sendRedirect("/VenteromServlet");
 	
