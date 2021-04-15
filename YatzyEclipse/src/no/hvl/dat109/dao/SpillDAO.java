@@ -19,7 +19,7 @@ public class SpillDAO {
 	}
 	
 	public Spill hentFerdigSpill(String spillNavn) {
-		return  em.createQuery("Select s from Spill s where s.spillNavn =: spillNavn",Spill.class).setParameter("spillNavn", spillNavn).getSingleResult();
+		return  em.createQuery("Select s from Spill s where s.spillNavn=:spillNavn",Spill.class).setParameter("spillNavn", spillNavn).getSingleResult();
 	}
 	
 	
