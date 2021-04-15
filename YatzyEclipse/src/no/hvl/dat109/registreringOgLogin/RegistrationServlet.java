@@ -51,7 +51,7 @@ public class RegistrationServlet extends HttpServlet {
 			
 			Bruker nyBruker = new Bruker(
 					brukerRequest.getBrukernavn(), 
-					brukerRequest.getEmail(), hashetPassord, PassordHjelper.genererTilfeldigSalt(), null, 0);
+					brukerRequest.getEmail(), hashetPassord, salt, null, 0);
 			
 			if(dao.leggTilBruker(nyBruker)){
 				//Om det gikk greit :)
