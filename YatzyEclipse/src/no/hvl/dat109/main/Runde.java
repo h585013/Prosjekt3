@@ -43,7 +43,8 @@ public class Runde {
 		for (Bruker s : this.spillere) {
 			// Legger til trillCount og resultat for hver spiller
 			this.trillCount.add(0);
-			this.resultat.add(new Resultat(this.spillere.get(currPlayer).getBrukernavn(), spillID));
+//			this.resultat.add(new Resultat(this.spillere.get(currPlayer).getBrukernavn(), spillID));
+			this.resultat.add(new Resultat());
 		}
 	}
 
