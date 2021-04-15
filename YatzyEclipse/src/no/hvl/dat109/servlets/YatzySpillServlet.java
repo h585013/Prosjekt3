@@ -64,7 +64,7 @@ public class YatzySpillServlet extends HttpServlet {
 		}
 		
 		
-		request.getRequestDispatcher("WEB-INF/game.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/game.jsp").forward(request, response);
 	}
 
 	@Override
