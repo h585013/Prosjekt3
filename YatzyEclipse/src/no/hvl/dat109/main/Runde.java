@@ -55,7 +55,6 @@ public class Runde {
 	 * @return poeng for runden hvis spilleren har trilt tre ganger, 0 ellers
 	 */
 	public void spillRunde(Enumeration<String> indekser) {
-		this.terninger.stream().map(t -> t.getTall()).forEach(System.out::print);
 		
 		if (this.rundenr <= 18) {
 			boolean ferdig = this.trillCount.stream().mapToInt(t -> t).allMatch(t -> t == 3);
@@ -69,13 +68,11 @@ public class Runde {
 				
 				nesteSpiller();
 				
-				this.trillCount.stream().forEach(System.out::print);
 				
 				for (int i = 0; i < this.trillCount.size(); i++) {
 					this.trillCount.set(i, 0);
 				}
 				
-				this.trillCount.stream().forEach(System.out::print);
 				
 				trillAlleTerningerIgjen();
 			} else {
