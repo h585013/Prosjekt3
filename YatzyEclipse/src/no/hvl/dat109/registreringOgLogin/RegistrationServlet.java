@@ -36,10 +36,13 @@ public class RegistrationServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String requestData = request.getReader().lines().collect(Collectors.joining());
+		String brukernavn = request.getParameter("brukernavn");
+		String passord = request.getParameter("passord");
+		String passordRepeat = request.getParameter("passordRepeat");
+		String epost = request.getParameter("epost");
 		
-		ObjectMapper objectMapper = new ObjectMapper();
-		BrukerRequest brukerRequest = objectMapper.readValue(requestData, BrukerRequest.class);
+		BrukerRequest brukerRequest = new BrukerRequest(brukernavn, epost, passord, passordRepeat);
+		
 		
 		if(!BrukerRequestService.matcherPassord(brukerRequest.getPassord(), brukerRequest.getPassordRepeat())) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT); 
