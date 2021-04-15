@@ -12,7 +12,7 @@
 		<fieldset>
 			<legend>Finn et spill og delta</legend>
 			<c:forEach items="ledigeSpill" var="s">
-				<input type="radio" name="${s.spillID}" /> ${s.spillNavn}
+				<input type="radio" name="${s.spillID}" /> ${s.spillNavn} 
 			</c:forEach>
 			<button type="button">Delta!</button>
 		</fieldset>
