@@ -1,6 +1,7 @@
 package no.hvl.dat109.servlets;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -46,6 +47,9 @@ public class DeltaISpillServlet extends HttpServlet {
 		
 	HttpSession sesjon = request.getSession();
 	
+	Enumeration<String> params = request.getParameterNames();
+	while (params.hasMoreElements()) 
+		System.out.println(params.nextElement());
 	
 	
 //	response.sendRedirect("/VenteromServlet");
