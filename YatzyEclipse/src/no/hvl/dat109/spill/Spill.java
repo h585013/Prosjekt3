@@ -15,7 +15,7 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 
 
 /**
- * Spill entiteten innholder en unik id,et spillnavn valgt av spiller når
+ * Spill entiteten innholder en unik id,et spillnavn valgt av spiller nï¿½r
  * spillet opprettes. En string med brukernavn til den som opprettet Spillet, og
  * en liste av deltagere.
  * 
@@ -23,7 +23,7 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
  */
 
 @Entity
-@Table(schema = "yatzy", name = "spillPU")
+@Table(schema = "yatzy", name = "yatzyPU")
 public class Spill {
 
 	@Id
@@ -41,11 +41,11 @@ public class Spill {
 	private String spillNavn;
 	private String admin;
 
-	@OneToMany(mappedBy = "spill", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "spillID", fetch = FetchType.EAGER)
 	private List<Bruker> brukere;
 
 	/**
-	 * Konstruktør
+	 * Konstruktï¿½r
 	 * 
 	 * 
 	 * @param spillNavn
