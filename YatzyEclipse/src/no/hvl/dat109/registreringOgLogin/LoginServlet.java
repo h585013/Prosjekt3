@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
 		String passord = request.getParameter("passord");
 
 		Bruker b = dao.finnBruker(brukernavn);
+
 		if (b == null) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.sendRedirect("/Prosjekt3/login");
@@ -63,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 
 			} else {
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
-				response.sendRedirect("/Prosjekt3/login");
+				response.sendRedirect("/Prosjekt3/login"); 
 			}
 		}
 

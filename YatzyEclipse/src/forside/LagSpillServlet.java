@@ -41,7 +41,7 @@ public class LagSpillServlet extends HttpServlet {
 		HttpSession sesjon = request.getSession();
 
 		String brukernavn = (String) sesjon.getAttribute("brukernavn");
-		System.out.println("dette er brukernavn" + brukernavn);
+		System.out.println("dette er brukernavn: " + brukernavn);
 
 		String spillNavn = request.getParameter("spillNavn");
 		System.out.println("dette er spillnavn: "+ spillNavn);
