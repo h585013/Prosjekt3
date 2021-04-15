@@ -14,13 +14,15 @@ public class SpillDAO {
 	@PersistenceContext(name = "yatzyPU")
 	private EntityManager em;
 
-	private List<Bruker> brukere;
 	public void leggTilSpill(Spill spill) {
 		em.merge(spill);
-		//em.flush();
-		//spill.getSpillID()
-		
 	}
+	
+	public Spill hentFerdigSpill(String spillNavn) {
+		return  em.createQuery("Select s from Spill s where s.spillNavn=:spillNavn",Spill.class).setParameter("spillNavn", spillNavn).getSingleResult();
+	}
+	
+	
 	public Spill finnSpill(int id) {
 		return em.find(Spill.class, id);
 	}
