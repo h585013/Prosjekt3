@@ -44,7 +44,7 @@ public class LagSpillServlet extends HttpServlet {
 
 		String spillNavn = request.getParameter("spillNavn");
 		// må etterhvert lage en validator for å sjekke spillnavn lengde osv.
-		String spillNavnEscaped = StringEscapeUtils.escapeHtml4(request.getParameter("spillNavn"));
+		String spillNavnEscaped = request.getParameter("spillNavn");
 		
 		Spill spill = new Spill(spillNavnEscaped, brukernavn);
 		int spillID = spilldao.leggTilSpill(spill);
