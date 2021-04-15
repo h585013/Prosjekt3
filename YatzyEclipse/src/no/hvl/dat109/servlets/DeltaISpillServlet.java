@@ -30,6 +30,7 @@ public class DeltaISpillServlet extends HttpServlet {
 	@EJB
 	private SpillDAO spilldao = new SpillDAO();
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -39,6 +40,7 @@ public class DeltaISpillServlet extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
