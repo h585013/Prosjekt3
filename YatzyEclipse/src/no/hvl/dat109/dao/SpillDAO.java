@@ -17,10 +17,15 @@ public class SpillDAO {
 	private List<Bruker> brukere;
 	public void leggTilSpill(Spill spill) {
 		em.merge(spill);
-		//em.flush();
-		//spill.getSpillID()
-		
 	}
+	
+	public Spill hentFerdigSpill(String spillnavn) {
+		return (Spill) em.createQuery("Select s from Spill s where s.spillNavn =: spillnavn",Spill.class).setParameter("spillnavn", spillnavn).getResultList();
+	}
+	
+	
+	
+	
 	public Spill finnSpill(int id) {
 		return em.find(Spill.class, id);
 	}
