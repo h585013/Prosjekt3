@@ -1,6 +1,7 @@
 package no.hvl.dat109.servlets;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,4 +41,18 @@ public class VenteromServlet extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		HttpSession sesjon = request.getSession();
+		
+		System.out.println(request.getParameter("START"));
+		Enumeration<String> params = request.getParameterNames();
+		while (params.hasMoreElements()) {
+			System.out.println(params.nextElement());
+		}
+		if (request.getParameter("START")!=null) {
+			response.sendRedirect("/Prosjekt3/YatzySpill");
+		}
+		
+	}
 }
