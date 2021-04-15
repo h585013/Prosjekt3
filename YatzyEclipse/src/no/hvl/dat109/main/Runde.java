@@ -32,7 +32,7 @@ public class Runde {
 	 * 
 	 * @param spillere, spillerne som skal være med i hele spillet
 	 */
-	public Runde(List<Bruker> brukere) {
+	public Runde(List<Bruker> brukere, int spillID) {
 		this.spillere = brukere;
 		this.currPlayer = 0;
 		this.rundenr = 1;
@@ -43,7 +43,7 @@ public class Runde {
 		for (Bruker s : this.spillere) {
 			// Legger til trillCount og resultat for hver spiller
 			this.trillCount.add(0);
-			this.resultat.add(new Resultat());
+			this.resultat.add(new Resultat(this.spillere.get(currPlayer).getBrukernavn(), spillID));
 		}
 	}
 

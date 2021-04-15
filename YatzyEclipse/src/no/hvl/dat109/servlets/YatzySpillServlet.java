@@ -51,7 +51,7 @@ public class YatzySpillServlet extends HttpServlet {
 			// Hente ut alle spillerene --> liste
 			List<Bruker> spillere = (List<Bruker>) sesjon.getAttribute("spillerListe");
 			
-			Runde r = new Runde(spillere);
+			Runde r = new Runde(spillere, spillID);
 			
 			sesjon.setAttribute("runde", r);
 		} else {
