@@ -12,6 +12,9 @@ public class Resultat {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+	
+	private String brukernavn;
+	private int spillID;
 	private int enere;
 	private int toere;
 	private int treere;
@@ -31,7 +34,10 @@ public class Resultat {
 	private int yatzy;
 	private int totalSum;
 	
-	
+	public Resultat(String brukernavn, int spillID) {
+		this.brukernavn = brukernavn;
+		this.spillID = spillID;
+	}
 	
 	
 	public int getEnere() {
