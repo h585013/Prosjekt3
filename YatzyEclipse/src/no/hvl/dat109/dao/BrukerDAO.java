@@ -21,7 +21,7 @@ public class BrukerDAO {
 
 //		Bruker b = em.find(Bruker.class, navn);
 		try {
-			if(em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult() != null) {
+			if(em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult() == null) {
 				return false;
 			}
 			
@@ -34,7 +34,7 @@ public class BrukerDAO {
 
 	public boolean epostLedig(String epost) {
 		try {
-			if(	em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult() != null) {
+			if(	em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult() == null) {
 				return false;
 			}
 			
