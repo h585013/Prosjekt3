@@ -34,10 +34,10 @@ public class Resultat {
 	private int yatzy;
 	private int totalSum;
 	
-	public Resultat(String brukernavn, int spillID) {
-		this.brukernavn = brukernavn;
-		this.spillID = spillID;
-	}
+//	public Resultat(String brukernavn, int spillID) {
+//		this.brukernavn = brukernavn;
+//		this.spillID = spillID;
+//	}
 	
 	
 	public int getEnere() {
