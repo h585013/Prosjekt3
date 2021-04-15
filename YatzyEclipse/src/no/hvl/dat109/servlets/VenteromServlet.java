@@ -31,10 +31,12 @@ public class VenteromServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		int id = (int) request.getAttribute("spillID");
+		HttpSession sesjon = request.getSession();
+		
+		int id = (int) sesjon.getAttribute("spillID");
 		List<Bruker> spiller = dao.hentAlle();
 		List<Bruker> spillerListe = spiller.stream().filter(x -> x.getSpillID().getSpillID() == id).collect(Collectors.toList());
-		request.setAttribute("spillerListe", spillerListe);	
+		sesjon.setAttribute("spillerListe", spillerListe);	
 		request.getRequestDispatcher("WEB-INF/jsp/venterom.jsp").forward(request, response);
 	}
 
