@@ -10,7 +10,6 @@ import javax.transaction.Transactional;
 import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.spill.Spill;
 
-
 @Stateless
 public class BrukerDAO {
 
@@ -21,31 +20,31 @@ public class BrukerDAO {
 
 //		Bruker b = em.find(Bruker.class, navn);
 		try {
-			if(em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult() == null) {
+			if (em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class)
+					.setParameter("name", navn).getSingleResult() == null) {
 				return true;
 			}
-			
-		} catch(Exception e) {
+
+		} catch (Exception e) {
 			return true;
 		}
-		
+
 		return false;
 	}
-	
 
 	public boolean epostLedig(String epost) {
 		try {
-			if(	em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult() == null) {
+			if (em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class)
+					.setParameter("epost", epost).getSingleResult() == null) {
 				return true;
 			}
-			
-		} catch(Exception e) {
+
+		} catch (Exception e) {
 			return true;
 		}
-		
+
 		return false;
 
-		
 	}
 
 	public Bruker finnBruker(String brukernavn) {
@@ -54,12 +53,11 @@ public class BrukerDAO {
 
 	@Transactional
 	public boolean leggTilBruker(Bruker b) {
-		
-		if(brukernavnLedig(b.getBrukernavn())) {
+
+		if (brukernavnLedig(b.getBrukernavn())) {
 			em.persist(b);
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -67,10 +65,11 @@ public class BrukerDAO {
 	public List<Bruker> hentAlle() {
 		return em.createQuery("select b from Bruker b", Bruker.class).getResultList();
 	}
+
 	public void leggTilSpill(String brukernavn, Spill spill) {
-	Bruker b = 	em.find(Bruker.class, brukernavn);
-	b.setSpill(spill);
-	em.persist(b);
+		Bruker b = em.find(Bruker.class, brukernavn);
+		b.setSpill(spill);
+		em.persist(b);
 	}
 
 }

@@ -44,19 +44,18 @@ public class LagSpillServlet extends HttpServlet {
 		System.out.println("dette er brukernavn: " + brukernavn);
 
 		String spillNavn = request.getParameter("spillNavn");
-		System.out.println("dette er spillnavn: "+ spillNavn);
+		System.out.println("dette er spillnavn: " + spillNavn);
 		// må etterhvert lage en validator for å sjekke spillnavn lengde osv.
-		//String spillNavnEscaped = request.getParameter("spillNavn");
-		//System.out.println("dette er spillnavn escaped "+ spillNavnEscaped);
-		
+		// String spillNavnEscaped = request.getParameter("spillNavn");
+		// System.out.println("dette er spillnavn escaped "+ spillNavnEscaped);
+
 		Spill spill = new Spill(spillNavn);
-		spilldao.leggTilSpill(spill);
-		
-		Bruker bruker = brukerdao.finnBruker(brukernavn);
+
+		Bruker b = brukerdao.finnBruker(brukernavn);
 		brukerdao.leggTilSpill(brukernavn, spill);
-		
-		spill.leggTilBruker(bruker);
-		
+
+		spill.leggTilBruker(b);
+		spilldao.leggTilSpill(spill);
 
 		if (sesjon != null) {
 			sesjon.invalidate();
@@ -64,7 +63,7 @@ public class LagSpillServlet extends HttpServlet {
 		sesjon = request.getSession(true);
 		sesjon.setAttribute("brukernavn", brukernavn);
 		sesjon.setAttribute("spillnavn", spillNavn);
-		//sesjon.setAttribute("spillID", spillID);
+		// sesjon.setAttribute("spillID", spillID);
 		response.sendRedirect("/VenteromServlet");
 	}
 
