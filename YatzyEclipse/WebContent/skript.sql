@@ -35,7 +35,7 @@ CREATE TABLE Bruker
 (	
 	brukernavn varchar,
 	score INTEGER, 
-	passord varchar, 
+	hashetPassord varchar, 
 	spill varchar, 
 	email varchar, 
 	salt varchar,
