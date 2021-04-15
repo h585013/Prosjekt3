@@ -46,7 +46,11 @@ public class DeltaISpillServlet extends HttpServlet {
 		
 	HttpSession sesjon = request.getSession();
 	
-	response.sendRedirect("/VenteromServlet");
+	
+	
+//	response.sendRedirect("/VenteromServlet");
+	
+	
 	
 		
 		/**	String brukernavn = (String) sesjon.getAttribute("brukernavn");
