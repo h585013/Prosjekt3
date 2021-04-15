@@ -49,7 +49,7 @@ public class YatzySpillServlet extends HttpServlet {
 			Spill s = spilldao.finnSpill(spillID);
 			
 			// Hente ut alle spillerene --> liste
-			List<Bruker> spillere = s.getBrukere();
+			List<Bruker> spillere = (List<Bruker>) sesjon.getAttribute("spillerListe");
 			
 			Runde r = new Runde(spillere);
 			
@@ -78,7 +78,7 @@ public class YatzySpillServlet extends HttpServlet {
 		
 		sesjon.setAttribute("runde", r);
 
-		response.sendRedirect("/game");
+		response.sendRedirect("/Prosjekt3/YatzySpill");
 
 	}
 

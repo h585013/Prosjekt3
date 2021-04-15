@@ -44,7 +44,7 @@
 				</tr>
 				<tr>
 					<th>Firere</th>
-					<c:forEach items="${runde.spillere}" var="r">
+					<c:forEach items="${runde.resultat}" var="r">
 						<th>${r.firere}</th>
 					</c:forEach>
 				</tr>
@@ -137,7 +137,7 @@
 
 		<!-- Spiller X sin tur -->
 		<div class="item spillertur">
-			<p>${runde.currPlayer.navn} sin tur!</p>
+			<p>${runde.currPlayer.brukernavn} sin tur!</p>
 		</div>
 
 
@@ -146,7 +146,7 @@
 			<c:when test="${vinner eq null}">
 				<!-- Terningene -->
 				<div class="item terningTrill">
-					<form action="game" method="post">
+					<form action="YatzySpill" method="post">
 						<div class="item terninger">
 							<c:forEach var="t" items="${runde.terninger}" varStatus="count">
 								<div>
