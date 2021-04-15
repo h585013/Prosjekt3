@@ -22,6 +22,7 @@ public class BrukerDAO {
 //		Bruker b = em.find(Bruker.class, navn);
 		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn=" + navn, Bruker.class).getSingleResult();
 		
+		
 		return b == null;
 	}
 
