@@ -48,9 +48,10 @@ public class DeltaISpillServlet extends HttpServlet {
 		
 	HttpSession sesjon = request.getSession();
 	
-	Enumeration<String> params = request.getParameterNames();
-	while (params.hasMoreElements()) 
-		System.out.println(params.nextElement());
+	String params = request.getParameterNames().nextElement();
+	System.out.println("Params = " + params);
+//	while (params.hasMoreElements()) 
+//		System.out.println(params.nextElement());
 	
 	// hente ut spillID
 	// registrere spillID på brukeren vår

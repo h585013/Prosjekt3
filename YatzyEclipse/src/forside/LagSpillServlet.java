@@ -39,12 +39,20 @@ public class LagSpillServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession sesjon = request.getSession();
-
-		String brukernavn = (String) sesjon.getAttribute("brukernavn");
-		System.out.println("dette er brukernavn: " + brukernavn);
-
+		if (sesjon != null) {
+			sesjon.invalidate();
+		}
 		String spillNavn = request.getParameter("spillNavn");
 		System.out.println("dette er spillnavn: " + spillNavn);
+		
+		String brukernavn = (String) sesjon.getAttribute("brukernavn");
+		System.out.println("dette er brukernavn: " + brukernavn);
+		
+		if(!spillNavn.equals(null)) {
+
+		
+
+		
 		// må etterhvert lage en validator for å sjekke spillnavn lengde osv.
 		// String spillNavnEscaped = request.getParameter("spillNavn");
 		// System.out.println("dette er spillnavn escaped "+ spillNavnEscaped);
@@ -56,25 +64,27 @@ public class LagSpillServlet extends HttpServlet {
 		//System.out.println(spill.getSpillID() + "spilleid");
 		
 		//henter automatisk generert spillID
-		//int spillid = spilldao.hentSpillID();
+		int spillid = spilldao.hentSpillID();
 		//legger til spillID til brukeren 
 		
 		Bruker b = brukerdao.finnBruker(brukernavn);
-		b.set
+		b.setSpillID(spill);
 		
-		//brukerdao.leggTilSpill(brukernavn, spill);
+		
+		brukerdao.leggTilSpill(brukernavn, spill);
 
-		//spill.leggTilBruker(b);
+		spill.leggTilBruker(b);
 		
 
-		if (sesjon != null) {
-			sesjon.invalidate();
-		}
-		sesjon = request.getSession(true);
+		
 		sesjon.setAttribute("brukernavn", brukernavn);
 		sesjon.setAttribute("spillnavn", spillNavn);
 		// sesjon.setAttribute("spillID", spillID);
-		response.sendRedirect("/VenteromServlet");
+		response.sendRedirect("Prosjekt3/VenteromServlet");
+		}else {
+			response.sendRedirect("Prosjekt3/LagSpillServlet");
+		}
+		
 	}
 
 }
