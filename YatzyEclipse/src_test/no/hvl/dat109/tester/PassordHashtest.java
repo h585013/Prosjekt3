@@ -36,6 +36,7 @@ public class PassordHashtest {
 		assertEquals(salt, testBruker.getSalt());
 	}
 	
+	@Test
 	public void hentRiktigPassord() {
 		assertEquals(hashetPassord, testBruker.getPassord());
 	}
@@ -44,14 +45,17 @@ public class PassordHashtest {
 		assertFalse(passord.equals(testBruker.getPassord()));
 	}
 	
+	@Test
 	public void lagSammeHash() {
 		assertEquals(hashetPassord, PassordHjelper.hashMedSalt(passord, salt));
 	}
 		
+	@Test
 	public void validerRiktigPassord() {
 		assertTrue(PassordHjelper.validerMedSalt(passord, salt, hashetPassord));
 	}
 
+	@Test
 	public void validerFeilPassord() {
 		assertFalse(PassordHjelper.validerMedSalt("ikkeRiktigPassord", salt, hashetPassord));
 	}
