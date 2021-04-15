@@ -20,17 +20,31 @@ public class BrukerDAO {
 	public boolean brukernavnLedig(String navn) {
 
 //		Bruker b = em.find(Bruker.class, navn);
-
-		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult();
+		try {
+			if(em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult() != null) {
+				return false;
+			}
+			
+		} catch(Exception e) {
+			return false;
+		}
 		
-		
-		return b == null;
+		return true;
 	}
 
 	public boolean epostLedig(String epost) {
+		try {
+			if(	em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult() != null) {
+				return false;
+			}
+			
+		} catch(Exception e) {
+			return false;
+		}
+		
+		return true;
 
-		Bruker b = em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult();
-		return b == null;
+		
 	}
 
 	public Bruker finnBruker(String brukernavn) {
