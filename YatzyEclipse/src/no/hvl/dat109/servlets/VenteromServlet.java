@@ -22,7 +22,9 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 
 /**
  * Servlet implementation class VenteromServlet
+ * @author vilde
  */
+
 @WebServlet("/Venterom")
 public class VenteromServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
