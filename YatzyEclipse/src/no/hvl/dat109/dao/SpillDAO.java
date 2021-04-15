@@ -17,8 +17,9 @@ public class SpillDAO {
 	private List<Bruker> brukere;
 	public int leggTilSpill(Spill spill) {
 		em.persist(spill);
-		em.flush();
-		return spill.getSpillID();
+		//em.flush();
+		//spill.getSpillID()
+		return 0 ;
 	}
 
 	public Spill finnSpill(int id) {
