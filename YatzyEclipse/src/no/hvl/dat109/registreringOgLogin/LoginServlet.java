@@ -62,7 +62,6 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect("/Forside");
 
 			} else {
-
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
 			}
 		}
