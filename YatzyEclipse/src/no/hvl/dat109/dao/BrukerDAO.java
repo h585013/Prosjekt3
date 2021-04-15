@@ -67,10 +67,10 @@ public class BrukerDAO {
 	public List<Bruker> hentAlle() {
 		return em.createQuery("select b from Bruker b", Bruker.class).getResultList();
 	}
-	public void leggTilSpill(Bruker bruker,Spill spill) {
-	
-	bruker.setSpill(spill);
-	em.persist(bruker);
+	public void leggTilSpill(String brukernavn, Spill spill) {
+	Bruker b = 	em.find(Bruker.class, brukernavn);
+	b.setSpill(spill);
+	em.persist(b);
 	}
 
 }

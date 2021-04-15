@@ -26,23 +26,18 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 @Table(schema = "yatzy", name = "spill")
 public class Spill {
 	
-	
-	private String spillNavn;
-	private String admin;
-	@OneToMany(mappedBy = "spillID", fetch = FetchType.EAGER)
-	private List<Bruker> brukere;
-
-
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int spillID;
 	
-	public Spill(String spillNavn, String admin) {
+	private String spillNavn;
+	
+	@OneToMany(mappedBy = "spillID")
+	private List<Bruker> brukere;
 
+
+	public Spill(String spillNavn) {
 		this.spillNavn = spillNavn;
-		this.admin = admin;
-
 	}
 
 	public Spill() {
@@ -62,19 +57,12 @@ public class Spill {
 	public String getSpillNavn() {
 		return spillNavn;
 	}
-	
 
 	public void setSpillNavn(String spillNavn) {
 		this.spillNavn = spillNavn;
 	}
 
-	public String getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(String admin) {
-		this.admin = admin;
-	}
+	
 
 	public List<Bruker> getBrukere() {
 		return brukere;

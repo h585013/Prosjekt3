@@ -15,11 +15,11 @@ public class SpillDAO {
 	private EntityManager em;
 
 	private List<Bruker> brukere;
-	public int leggTilSpill(Spill spill) {
+	public void leggTilSpill(Spill spill) {
 		em.merge(spill);
 		//em.flush();
 		//spill.getSpillID()
-		return 0 ;
+		
 	}
 	public Spill finnSpill(int id) {
 		return em.find(Spill.class, id);
