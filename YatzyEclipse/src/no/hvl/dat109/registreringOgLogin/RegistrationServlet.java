@@ -43,7 +43,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		if(!BrukerRequestService.matcherPassord(brukerRequest.getPassord(), brukerRequest.getPassordRepeat())) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT); 
-			response.sendRedirect("/registrer");
+			response.sendRedirect("/Prosjekt3/registrer");
 		}else {
 
 			String salt = PassordHjelper.genererTilfeldigSalt();
