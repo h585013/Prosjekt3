@@ -143,7 +143,7 @@
 
 
 		<c:choose>
-			<c:when test="${vinner eq null}">
+			<c:when test="${r.vinner eq null}">
 				<!-- Terningene -->
 				<div class="item terningTrill">
 					<form action="YatzySpill" method="post">
