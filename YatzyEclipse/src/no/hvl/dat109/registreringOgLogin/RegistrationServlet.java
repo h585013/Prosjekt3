@@ -60,7 +60,7 @@ public class RegistrationServlet extends HttpServlet {
 				request.getSession().setAttribute("brukernavn", brukerRequest.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_CREATED); 
 				
-				response.sendRedirect("/Prosjekt3/Forside");
+				response.sendRedirect("/Prosjekt3/Forside"); //
 			}else {
 				// Om det ikke gikk greit :(
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
