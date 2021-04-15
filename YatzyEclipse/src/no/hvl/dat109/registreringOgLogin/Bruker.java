@@ -84,6 +84,16 @@ public class Bruker {
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
+
+
+	public Spill getSpillID() {
+		return spillID;
+	}
+
+
+	public void setSpillID(Spill spillID) {
+		this.spillID = spillID;
+	}
 	
 	
 
