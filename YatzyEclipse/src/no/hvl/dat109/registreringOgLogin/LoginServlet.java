@@ -54,6 +54,8 @@ public class LoginServlet extends HttpServlet {
 		if (b == null) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.sendRedirect("/Prosjekt3/login");
+			
+			// MÅ gjøre noe mer her. Sender feilmelding. 
 		} else {
 			
 			if (PassordHjelper.validerMedSalt(passord, b.getSalt(), b.getPassord())) {
@@ -64,7 +66,9 @@ public class LoginServlet extends HttpServlet {
 
 			} else {
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
-				response.sendRedirect("/Prosjekt3/login"); 
+				response.sendRedirect("/Prosjekt3/login");
+				
+				// MÅ gjøre noe mer her. Sender feilmelding. 
 			}
 		}
 

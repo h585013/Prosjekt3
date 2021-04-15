@@ -64,6 +64,8 @@ public class RegistrationServlet extends HttpServlet {
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
 				response.sendRedirect("/Prosjekt3/registrer");
 				
+				// MÅ gjøre noe mer her. Sender feilmelding. 
+				
 			}
 		}
 		
