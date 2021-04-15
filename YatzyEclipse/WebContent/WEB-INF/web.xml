@@ -12,6 +12,7 @@
 		  <servlet>
         <servlet-name>registrer</servlet-name>
         <servlet-class>no.hvl.dat109.registreringOgLogin.RegistrationServlet</servlet-class>
+
    	 </servlet>
     <servlet-mapping>
         <servlet-name>RegistrationServlet</servlet-name>
