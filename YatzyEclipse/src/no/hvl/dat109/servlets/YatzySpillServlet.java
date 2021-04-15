@@ -23,7 +23,7 @@ import no.hvl.dat109.spill.Spill;
  * 
  * @author - Anne, Thea, Magnus 
  */
-@WebServlet("/game")
+@WebServlet("/YatzySpill")
 public class YatzySpillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
