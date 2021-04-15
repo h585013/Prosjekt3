@@ -7,7 +7,7 @@
 
 	<display-name>Yatzy</display-name>
 	<welcome-file-list>
-	<welcome-file>RegistrationServlet</welcome-file>
+	<welcome-file>registrer</welcome-file>
 	</welcome-file-list>
 		  <servlet>
         <servlet-name>registrer</servlet-name>
