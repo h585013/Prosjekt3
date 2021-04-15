@@ -67,7 +67,7 @@ public class LagSpillServlet extends HttpServlet {
 			sesjon.setAttribute("brukernavn", brukernavn);
 			sesjon.setAttribute("spillnavn", spillNavn);
 			sesjon.setAttribute("spillID", spillID);
-			response.sendRedirect("Prosjekt3/VenteromServlet");
+			response.sendRedirect("/Prosjekt3/Venterom");
 		} else {
 			response.sendRedirect("Prosjekt3/LagSpillServlet");
 		}
