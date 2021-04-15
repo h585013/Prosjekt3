@@ -48,7 +48,6 @@ public class BrukerDAO {
 	}
 
 	public Bruker finnBruker(String brukernavn) {
-		System.out.println(em.createQuery("select hashetpassord from Bruker", Bruker.class));
 		return em.find(Bruker.class, brukernavn);
 	}
 
