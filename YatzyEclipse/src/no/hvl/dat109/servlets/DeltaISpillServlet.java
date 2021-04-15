@@ -1,7 +1,5 @@
 package no.hvl.dat109.servlets;
 
-
-
 import java.io.IOException;
 import java.util.List;
 

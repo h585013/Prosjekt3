@@ -11,7 +11,7 @@ public class BrukerRequest {
 		this.brukernavn = brukernavn;
 		this.passord = passord;
 		this.passordRepeat = passordRepeat;
-		this.email = email;
+		this.email = epost;
 	}
 	
 	public String getBrukernavn() {
