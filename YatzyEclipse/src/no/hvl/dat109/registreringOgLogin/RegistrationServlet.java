@@ -25,23 +25,24 @@ public class RegistrationServlet extends HttpServlet {
 	@EJB
 	private BrukerDAO dao;
 	
-    /**
-     * Default constructor. 
-     */
-    public RegistrationServlet() {
-        // TODO Auto-generated constructor stub
-    }
 
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	
+		request.getRequestDispatcher("WEB-INF/jsp/registrer.jsp").forward(request, response);
+	}
+
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String requestData = request.getReader().lines().collect(Collectors.joining());
+		String brukernavn = request.getParameter("brukernavn");
+		String passord = request.getParameter("passord");
+		String passordRepeat = request.getParameter("passordRepeat");
+		String epost = request.getParameter("epost");
 		
-		ObjectMapper objectMapper = new ObjectMapper();
-		BrukerRequest brukerRequest = objectMapper.readValue(requestData, BrukerRequest.class);
+		BrukerRequest brukerRequest = new BrukerRequest(brukernavn, epost, passord, passordRepeat);
+		
 		
 		if(!BrukerRequestService.matcherPassord(brukerRequest.getPassord(), brukerRequest.getPassordRepeat())) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT); 
@@ -58,9 +59,12 @@ public class RegistrationServlet extends HttpServlet {
 				//Om det gikk greit :)
 				request.getSession().setAttribute("brukernavn", brukerRequest.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_CREATED); 
+				
+				response.sendRedirect("/Forside");
 			}else {
 				// Om det ikke gikk greit :(
 				response.setStatus(HttpServletResponse.SC_CONFLICT); 
+				
 			}
 		}
 		

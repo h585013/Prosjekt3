@@ -14,12 +14,15 @@ import no.hvl.dat109.spill.Spill;
 @Stateless
 public class BrukerDAO {
 
-	@PersistenceContext(name = "brukerPU")
+	@PersistenceContext(name = "yatzyPU")
 	private EntityManager em;
 
 	public boolean brukernavnLedig(String navn) {
 
-		Bruker b = em.find(Bruker.class, navn);
+//		Bruker b = em.find(Bruker.class, navn);
+		//return em.createQuery("SELECT g FROM Utleiegruppe g WHERE g.beskrivelse=:beskrivelse", Utleiegruppe.class).setParameter("beskrivelse", beskrivelse).getSingleResult();
+		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn=:navn", Bruker.class).setParameter("navn", navn).getSingleResult();
+		
 		
 		return b == null;
 	}

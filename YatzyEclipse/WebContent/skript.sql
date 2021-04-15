@@ -61,4 +61,3 @@ ALTER TABLE Resultat ADD constraint Res_fk2  FOREIGN KEY (brukernavn) REFERENCES
 
 
 
-

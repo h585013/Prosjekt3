@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 	}
 
 	/**
@@ -46,8 +46,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String brukernavn = request.getReader().readLine();
-		String passord = request.getReader().readLine();
+		String brukernavn = request.getParameter("brukernavn");
+		String passord = request.getParameter("passord");
 
 		Bruker b = dao.finnBruker(brukernavn);
 		if (b == null) {
@@ -59,6 +59,7 @@ public class LoginServlet extends HttpServlet {
 
 				request.getSession().setAttribute("brukernavn", b.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_OK);
+				response.sendRedirect("/Forside");
 
 			} else {
 
