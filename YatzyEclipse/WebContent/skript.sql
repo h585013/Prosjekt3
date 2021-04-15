@@ -52,9 +52,6 @@ CREATE TABLE Spill
 ALTER TABLE Resultat ADD constraint Res_fk  FOREIGN KEY (spillID) REFERENCES Spill(spillID);
 ALTER TABLE Resultat ADD constraint Res_fk2  FOREIGN KEY (brukernavn) REFERENCES Bruker(brukernavn);
 
-INSERT INTO Bruker (
-VALUES ('Bolle', 0, 'pass', 'yatzy','bolle@hotmail.com', 'salt')
-);
 
 
 
