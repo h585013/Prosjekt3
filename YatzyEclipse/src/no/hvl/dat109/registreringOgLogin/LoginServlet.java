@@ -52,6 +52,7 @@ public class LoginServlet extends HttpServlet {
 		Bruker b = dao.finnBruker(brukernavn);
 		if (b == null) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
+			response.sendRedirect("/Prosjekt3/login");
 		} else {
 			
 			
@@ -59,10 +60,11 @@ public class LoginServlet extends HttpServlet {
 
 				request.getSession().setAttribute("brukernavn", b.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_OK);
-				response.sendRedirect("/Forside");
+				response.sendRedirect("/Prosjekt3/Forside");
 
 			} else {
 				response.setStatus(HttpServletResponse.SC_CONFLICT);
+				response.sendRedirect("/Prosjekt3/login");
 			}
 		}
 
