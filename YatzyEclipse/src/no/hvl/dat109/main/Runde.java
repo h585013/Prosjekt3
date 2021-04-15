@@ -112,7 +112,7 @@ public class Runde {
 	 * @return listen
 	 */
 	private ArrayList<Integer> spillerScoreHittil() {
-		System.out.println("I spillerScoreHittil()");
+		System.out.println("I spillerScoreHittil(), runde: " + this.rundenr);
 		ArrayList<Integer> score = new ArrayList<Integer>();
 		for (int i = 1; i <= this.rundenr; i++) {
 			switch (i) {
@@ -176,7 +176,7 @@ public class Runde {
 			}
 		}
 
-		return null;
+		return score;
 
 	}
 
