@@ -19,8 +19,8 @@ public class SpillDAO {
 		em.merge(spill);
 	}
 	
-	public Spill hentFerdigSpill(String spillnavn) {
-		return (Spill) em.createQuery("Select s from Spill s where s.spillNavn =: spillnavn",Spill.class).setParameter("spillnavn", spillnavn).getResultList();
+	public Spill hentFerdigSpill(String spillNavn) {
+		return (Spill) em.createQuery("Select s from Spill s where s.spillNavn =: spillNavn",Spill.class).setParameter("spillNavn", spillNavn).getResultList();
 	}
 	
 	
