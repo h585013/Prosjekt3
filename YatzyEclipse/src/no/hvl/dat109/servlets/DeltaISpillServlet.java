@@ -33,11 +33,12 @@ public class DeltaISpillServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
+		
 		
 		List<Spill> ledigeSpill = spilldao.hentAlle();
 		
 		request.setAttribute("ledigeSpill", ledigeSpill);
+		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
 	}
 
 
@@ -47,9 +48,10 @@ public class DeltaISpillServlet extends HttpServlet {
 		
 	HttpSession sesjon = request.getSession();
 	
-	Enumeration<String> params = request.getParameterNames();
-	while (params.hasMoreElements()) 
-		System.out.println(params.nextElement());
+	String params = request.getParameterNames().nextElement();
+	System.out.println("Params = " + params);
+//	while (params.hasMoreElements()) 
+//		System.out.println(params.nextElement());
 	
 	// hente ut spillID
 	// registrere spillID på brukeren vår
