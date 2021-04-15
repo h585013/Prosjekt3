@@ -33,9 +33,9 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 	}
 
@@ -43,9 +43,9 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		String brukernavn = request.getParameter("brukernavn");
 		String passord = request.getParameter("passord");
 
@@ -54,7 +54,6 @@ public class LoginServlet extends HttpServlet {
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.sendRedirect("/Prosjekt3/login");
 		} else {
-			
 			
 			if (PassordHjelper.validerMedSalt(passord, b.getSalt(), b.getPassord())) {
 
