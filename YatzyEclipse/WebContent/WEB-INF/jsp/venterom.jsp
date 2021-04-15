@@ -12,7 +12,9 @@ pageEncoding="ISO-8859-1"%>
 <body>
    <!-- <script>window.setInterval('refresh()', 3000); </script>   -->
     <div class="navbar">
-        <a class="active" href="Forside">EXIT</a>
+        <form action="Venterom" method="post">
+        <input type="submit" class="active" name="EXIT" value="EXIT">
+        </form>
         <a class="active" href="#" onclick="location.reload();" style="z-index: 3;">REFRESH</a>
     </div>
     <div class="terning">

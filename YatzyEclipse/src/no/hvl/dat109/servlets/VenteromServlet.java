@@ -46,12 +46,14 @@ public class VenteromServlet extends HttpServlet {
 		HttpSession sesjon = request.getSession();
 		
 		System.out.println(request.getParameter("START"));
-		Enumeration<String> params = request.getParameterNames();
-		while (params.hasMoreElements()) {
-			System.out.println(params.nextElement());
-		}
+//		Enumeration<String> params = request.getParameterNames();
+//		while (params.hasMoreElements()) {
+//			System.out.println(params.nextElement());
+//		}
 		if (request.getParameter("START")!=null) {
 			response.sendRedirect("/Prosjekt3/YatzySpill");
+		} else {
+			response.sendRedirect("/Prosjekt3/DeltaISpill");
 		}
 		
 	}
