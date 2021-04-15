@@ -33,11 +33,6 @@ public class ForsideServlet extends HttpServlet {
 		
 		HttpSession sesjon = request.getSession();
 		String brukernavn= (String) sesjon.getAttribute("brukernavn");
-		if (sesjon != null) {
-			sesjon.invalidate();
-		}
-		
-		sesjon = request.getSession(true);
 		sesjon.setAttribute("brukernavn", brukernavn);
 		String handling= request.getParameter("handling");
 		System.out.println("dette er handling:  " + handling);

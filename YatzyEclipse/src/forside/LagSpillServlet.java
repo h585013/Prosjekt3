@@ -38,10 +38,8 @@ public class LagSpillServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession sesjon = request.getSession(false);
-		if (sesjon != null) {
-			sesjon.invalidate();
-		}
+		HttpSession sesjon = request.getSession();
+		
 		String spillNavn = request.getParameter("spillNavn");
 		System.out.println("dette er spillnavn: " + spillNavn);
 
