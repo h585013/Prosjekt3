@@ -6,8 +6,8 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <header>
     <title>Venterom</title>
-   <script src="WEB-INF/js/venterom.js"></script>
-    <link rel="stylesheet" type="text/css" href="WEB-INF/css/venterom.css">
+   <script src="./js/venterom.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/venterom.css">
 </header>
 <body>
    <!-- <script>window.setInterval('refresh()', 3000); </script>   -->
@@ -32,7 +32,9 @@ pageEncoding="ISO-8859-1"%>
 </div>
     <form>
 </form> 
-
-<a href="game" class="button" value="START">START</a>
+<form action="Venterom" method="post">
+<input type="submit" class="button" name="START" value="START">
+</form>
+<!-- <a href="game" class="button" value="START">START</a> -->
 </body>
 </html> 
