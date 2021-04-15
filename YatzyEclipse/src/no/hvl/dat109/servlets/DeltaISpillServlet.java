@@ -26,6 +26,8 @@ public class DeltaISpillServlet extends HttpServlet {
 	@EJB
 	BrukerDAO brukerdao = new BrukerDAO();
 	
+	@EJB
+	private SpillDAO spilldao = new SpillDAO();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -39,9 +41,16 @@ public class DeltaISpillServlet extends HttpServlet {
 		
 		HttpSession sesjon = request.getSession();
 		
+		String brukernavn = (String) sesjon.getAttribute("brukernavn");
 		
-	// int spillID = SpillDAO.finnSpill()
+		int spillID = (int) sesjon.getAttribute("spillID");
+		
+		Spill s = spilldao.finnSpill(spillID);
 	
+		Bruker bruker = brukerdao.finnBruker(brukernavn);
+		s.leggTilBruker(bruker);
+		
+		
 		
 	}
 
