@@ -1,6 +1,7 @@
 package no.hvl.dat109.main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -51,8 +52,8 @@ public class Yatzy {
 			break;
 		case 8:
 			Bonuspoeng bp = new Bonuspoeng();
-			List<Integer> tidligereSummer = scoreHittil.subList(0, 7);
-			poeng = bp.resolve((ArrayList<Integer>) tidligereSummer);
+			ArrayList<Integer> ts = new ArrayList<Integer>(scoreHittil.subList(0, 7));
+			poeng = bp.resolve(ts);
 			break;
 		case 9:
 		case 10:
