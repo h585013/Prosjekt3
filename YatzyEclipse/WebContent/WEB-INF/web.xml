@@ -11,7 +11,6 @@
 	</welcome-file-list>
 		  <servlet>
         <servlet-name>RegistrationServlet</servlet-name>
-        <servlet-class>no.hvl.dat109.registringOgLogin</servlet-class>
    	 </servlet>
     <servlet-mapping>
         <servlet-name>RegistrationServlet</servlet-name>
