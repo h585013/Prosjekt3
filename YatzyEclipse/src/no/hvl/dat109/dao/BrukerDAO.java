@@ -21,7 +21,7 @@ public class BrukerDAO {
 
 //		Bruker b = em.find(Bruker.class, navn);
 
-		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn LIKE :name", Bruker.class).setParameter("name", navn).getSingleResult();
+		Bruker b = em.createQuery("select b from Bruker b where b.brukernavn =:name", Bruker.class).setParameter("name", navn).getSingleResult();
 		
 		
 		return b == null;
@@ -29,7 +29,7 @@ public class BrukerDAO {
 
 	public boolean epostLedig(String epost) {
 
-		Bruker b = em.createQuery("select b from Bruker b where b.epost LIKE :epost", Bruker.class).setParameter("epost", epost).getSingleResult();
+		Bruker b = em.createQuery("select b from Bruker b where b.epost =:epost", Bruker.class).setParameter("epost", epost).getSingleResult();
 		return b == null;
 	}
 
