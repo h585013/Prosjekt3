@@ -23,7 +23,7 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
  */
 
 @Entity
-@Table(schema = "yatzy", name = "yatzyPU")
+@Table(schema = "yatzy", name = "spil")
 public class Spill {
 
 	@Id
