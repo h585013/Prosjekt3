@@ -19,7 +19,7 @@ import no.hvl.dat109.main.Resultat;
 public class ResultatDAO {
 	
 
-	@PersistenceContext(name = "resultatPU")
+	@PersistenceContext(name = "yatzyPU")
 	private EntityManager em;
 	
 //	public int hentEnere(Resultat r) {

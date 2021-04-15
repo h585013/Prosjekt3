@@ -14,7 +14,7 @@ import no.hvl.dat109.spill.Spill;
 @Stateless
 public class BrukerDAO {
 
-	@PersistenceContext(name = "brukerPU")
+	@PersistenceContext(name = "yatzyPU")
 	private EntityManager em;
 
 	public boolean brukernavnLedig(String navn) {
