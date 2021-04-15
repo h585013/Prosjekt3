@@ -59,9 +59,12 @@ public class RegistrationServlet extends HttpServlet {
 				//Om det gikk greit :)
 				request.getSession().setAttribute("brukernavn", brukerRequest.getBrukernavn());
 				response.setStatus(HttpServletResponse.SC_CREATED); 
+				
+				response.sendRedirect("/Forside");
 			}else {
 				// Om det ikke gikk greit :(
 				response.setStatus(HttpServletResponse.SC_CONFLICT); 
+				
 			}
 		}
 		
