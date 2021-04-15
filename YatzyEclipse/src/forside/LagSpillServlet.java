@@ -44,47 +44,46 @@ public class LagSpillServlet extends HttpServlet {
 		}
 		String spillNavn = request.getParameter("spillNavn");
 		System.out.println("dette er spillnavn: " + spillNavn);
-		
+
 		String brukernavn = (String) sesjon.getAttribute("brukernavn");
 		System.out.println("dette er brukernavn: " + brukernavn);
-		
-		if(!spillNavn.equals(null)) {
 
-		
+		if (!spillNavn.equals(null)) {
 
-		
-		// må etterhvert lage en validator for å sjekke spillnavn lengde osv.
-		// String spillNavnEscaped = request.getParameter("spillNavn");
-		// System.out.println("dette er spillnavn escaped "+ spillNavnEscaped);
+			// må etterhvert lage en validator for å sjekke spillnavn lengde osv.
+			// String spillNavnEscaped = request.getParameter("spillNavn");
+			// System.out.println("dette er spillnavn escaped "+ spillNavnEscaped);
 
-		// oppretter spill objekt 
-		Spill spill = new Spill(spillNavn);
-		//legger til i databasen
-		spilldao.leggTilSpill(spill);
-		//System.out.println(spill.getSpillID() + "spilleid");
-		
-		//henter automatisk generert spillID
-		int spillid = spilldao.hentSpillID();
-		//legger til spillID til brukeren 
-		
-		Bruker b = brukerdao.finnBruker(brukernavn);
-		b.setSpillID(spill);
-		
-		
-		brukerdao.leggTilSpill(brukernavn, spill);
+			// oppretter spill objekt
+			Spill spill = new Spill(spillNavn);
+			// legger til i databasen
+			spilldao.leggTilSpill(spill);
+			// System.out.println(spill.getSpillID() + "spilleid");
 
-		spill.leggTilBruker(b);
-		
+			//henter ut nytt spillobjekt med ny autogenerelt spillid
+			Spill nyttspill = spillDAO().hentFerdigSpill();
+			
+			// henter automatisk generert spillID
+			//int spillid = spilldao.hentSpillID();	
+			
+			// legger til nytt spillobjekt til brukeren
+			Bruker b = brukerdao.finnBruker(brukernavn);
+			b.setSpillID(nyttspill);
+			brukerdao.leggTilSpill(brukernavn, spill);
 
-		
-		sesjon.setAttribute("brukernavn", brukernavn);
-		sesjon.setAttribute("spillnavn", spillNavn);
-		// sesjon.setAttribute("spillID", spillID);
-		response.sendRedirect("Prosjekt3/VenteromServlet");
-		}else {
+			//legger til bruker i liste over brukere i spillet
+			spill.leggTilBruker(b);
+			
+			//sender spillet til databasen med oppdatert liste over spillere
+
+			sesjon.setAttribute("brukernavn", brukernavn);
+			sesjon.setAttribute("spillnavn", spillNavn);
+			// sesjon.setAttribute("spillID", spillID);
+			response.sendRedirect("Prosjekt3/VenteromServlet");
+		} else {
 			response.sendRedirect("Prosjekt3/LagSpillServlet");
 		}
-		
+
 	}
 
 }
