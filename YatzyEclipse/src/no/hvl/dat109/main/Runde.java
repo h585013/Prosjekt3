@@ -115,8 +115,8 @@ public class Runde {
 	 * @return listen
 	 */
 	private ArrayList<Integer> spillerScoreHittil() {
+		System.out.println("I spillerScoreHittil()");
 		ArrayList<Integer> score = new ArrayList<Integer>();
-		Resultat res = this.resultat.get(this.currPlayer);
 		for (int i = 1; i <= this.rundenr; i++) {
 			switch (i) {
 			case 1:
