@@ -33,11 +33,12 @@ public class DeltaISpillServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
+		
 		
 		List<Spill> ledigeSpill = spilldao.hentAlle();
 		
 		request.setAttribute("ledigeSpill", ledigeSpill);
+		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
 	}
 
 
