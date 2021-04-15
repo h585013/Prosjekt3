@@ -17,88 +17,48 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 import no.hvl.dat109.dao.SpillDAO;
 import no.hvl.dat109.spill.Spill;
 
-
 /**
  * Servlet implementation class DeltaISpillServlet
  */
-@WebServlet("/DeltaISpill") 
+@WebServlet("/DeltaISpill")
 public class DeltaISpillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-		
+
 	@EJB
 	BrukerDAO brukerdao = new BrukerDAO();
-	
+
 	@EJB
 	private SpillDAO spilldao = new SpillDAO();
-	
+
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+
 		List<Spill> ledigeSpill = spilldao.hentAlle();
-		
+
 		request.setAttribute("ledigeSpill", ledigeSpill);
 		request.getRequestDispatcher("WEB-INF/jsp/deltaispill.jsp").forward(request, response);
 	}
 
-
-	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-	HttpSession sesjon = request.getSession();
-	
-	
-	Enumeration<String> params = request.getParameterNames();
-	if (params.hasMoreElements()) {
-		int spillID = Integer.parseInt(params.nextElement());
-		Bruker b = brukerdao.finnBruker((String) sesjon.getAttribute("brukernavn"));
-		Spill spill = spilldao.finnSpill(spillID);
-		b.setSpillID(spill);
-		brukerdao.leggTilSpill(b.getBrukernavn(), spill);
-		
-		response.sendRedirect("/Prosjekt3/Venterom");
-	} else {
-		response.sendRedirect("/Prosjekt3/DeltaISpill");
-	}
-	
-//	while (params.hasMoreElements()) 
-//		System.out.println(params.nextElement());
-	
-	// hente ut spillID
-	// registrere spillID på brukeren vår
-	// videre til venterom:
-	
-	// hvis ingen parametre: tilbake til vanlig
-	
-	
-	
-	
-	
-//	response.sendRedirect("/VenteromServlet");
-	
-	
-	
-		
-		/**	String brukernavn = (String) sesjon.getAttribute("brukernavn");
-		
-		int spillID = (int) sesjon.getAttribute("spillID");
-		
-		Spill s = spilldao.finnSpill(spillID);
-	
-		Bruker bruker = brukerdao.finnBruker(brukernavn);
-		s.leggTilBruker(bruker);
-		
-		if (sesjon != null) {
-			sesjon.invalidate();
+
+		HttpSession sesjon = request.getSession();
+
+		Enumeration<String> params = request.getParameterNames();
+		if (params.hasMoreElements()) {
+			int spillID = Integer.parseInt(params.nextElement());
+			Bruker b = brukerdao.finnBruker((String) sesjon.getAttribute("brukernavn"));
+			Spill spill = spilldao.finnSpill(spillID);
+			brukerdao.leggTilSpill(b.getBrukernavn(), spill);
+			sesjon.setAttribute("spillID", spill.getSpillID());
+
+			response.sendRedirect("/Prosjekt3/Venterom");
+		} else {
+			response.sendRedirect("/Prosjekt3/DeltaISpill");
 		}
-		sesjon = request.getSession(true);
-		sesjon.setAttribute("brukernavn", brukernavn);
-		sesjon.setAttribute("spillID", spillID);**/
-		
+
 	}
 
 }
-	
-	
-
