@@ -6,8 +6,9 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <header>
     <title>Venterom</title>
-   <script src="./js/venterom.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/venterom.css">
+     <base href="${pageContext.request.contextPath}">
+   <script src="../js/venterom.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/venterom.css">
 </header>
 <body>
    <!-- <script>window.setInterval('refresh()', 3000); </script>   -->
