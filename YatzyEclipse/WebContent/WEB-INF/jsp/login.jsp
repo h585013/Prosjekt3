@@ -7,6 +7,13 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
+
+	<h1>Login</h1>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<form action="login" method="post">
 		<fieldset>
 			<legend>Login</legend>
@@ -22,7 +29,11 @@
 		</fieldset>
 	</form>
 
-	<br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<form action="registrering" method="get">
 		<input type="submit" value="Registrer deg!">
 	</form>
