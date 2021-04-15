@@ -41,10 +41,10 @@ public class ForsideServlet extends HttpServlet {
 		sesjon.setAttribute("brukernavn", brukernavn);
 		String handling= request.getParameter("handling");
 		if(handling.equals("lagSpill")) {
-			response.sendRedirect("/LagSpillServlet");
+			response.sendRedirect("/Prosjekt3/LagSpillServlet");
 		}
 		if(handling.equals("deltaSpill")) {
-			response.sendRedirect("/DeltaISpill");
+			response.sendRedirect("/Prosjekt3/DeltaISpill");
 		}
 		
 	}
