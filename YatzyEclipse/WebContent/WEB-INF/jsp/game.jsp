@@ -44,7 +44,7 @@
 				</tr>
 				<tr>
 					<th>Firere</th>
-					<c:forEach items="${runde.spillere}" var="r">
+					<c:forEach items="${runde.resultat}" var="r">
 						<th>${r.firere}</th>
 					</c:forEach>
 				</tr>
