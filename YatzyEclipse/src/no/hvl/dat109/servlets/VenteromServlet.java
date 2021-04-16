@@ -22,6 +22,9 @@ import no.hvl.dat109.registreringOgLogin.Bruker;
 
 /**
  * Servlet implementation class VenteromServlet
+ * Spillere som melder seg inn i fra delta-servleten vil dukke opp hit
+ * Sortertes ved hjelp av spillID og sendes til jsp
+ * css og js kode er sta og vil ikke linke til :( Siden er flott, lover
  * @author vilde hagtvedt
  */
 
