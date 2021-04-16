@@ -14,11 +14,14 @@ import no.hvl.dat109.dao.BrukerDAO;
 
 /**
  * Servlet implementation class RegistrationServlet
+ * @author ehell
+ * 
  */
 @WebServlet(name="RegistrationServlet", urlPatterns = { "/registrer" }) //name = "ForsideServlet", urlPatterns = { "/forside" }
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
 	
 	@EJB
 	private BrukerDAO dao;
@@ -31,6 +34,12 @@ public class RegistrationServlet extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/jsp/registrer.jsp").forward(request, response);
 	}
 
+	/**
+	 * DoPost, henter registreringsinformasjon og lager en midlertidig brukerRequest. 
+	 * Om alt er OK (passord matcher, brukernavn ikke tatt) så får man salt og passordet blir hashet
+	 * før brukeren blir sendt videre til /forside.
+	 * Om ikke så skjer det ingenting.
+	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String brukernavn = request.getParameter("brukernavn");

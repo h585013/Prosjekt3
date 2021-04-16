@@ -13,6 +13,7 @@ import no.hvl.dat109.dao.BrukerDAO;
 
 /**
  * Servlet implementation class LoginServlet
+ * @author ehell
  */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -42,6 +43,10 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
+	 *      
+	 *      Hasher passord som er blitt skrevet inn (m salt som er tilknyttet bruker og sammenligner
+	 *      dette nye passordet med det som er blitt lagret på brukeren knyttet til brukernavnet. 
+	 *      Sender videre til r/forside om alt er ok.
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
