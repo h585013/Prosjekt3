@@ -8,7 +8,7 @@ pageEncoding="ISO-8859-1"%>
 <header>
     <title>Venterom</title>
    <script src="../js/venterom.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/venterom.css">
+    <link rel="stylesheet" type="text/css" href="venterom.css">
 </header>
 <body>
    <!-- <script>window.setInterval('refresh()', 3000); </script>   -->

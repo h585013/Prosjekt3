@@ -1,0 +1,284 @@
+
+/* @author vilde hagtvedt*/
+
+body {
+    margin: 0;
+    height: 720px;
+    background-color:whitesmoke;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: linear-gradient(#72cfe4, white);
+}
+
+@font-face {
+    font-family: ArcadeClassic; 
+    src: url('ARCADECLASSIC.TTF'); 
+} 
+
+@font-face {
+    font-family: Fipps-Regular; 
+    src: url('Fipps-Regular.otf'); 
+} 
+
+
+h1 {
+    margin: 0 0; 
+    height: 75px;
+    border-width: 6px;
+    font-size: 90px;
+    text-align: center;
+    top: 5px;
+    left: 620px;
+    position: absolute; 
+    color: whitesmoke;
+}
+
+h3 {
+    top: 0;
+    right: 450px;
+    color:black;
+    font-size: 55px;
+    text-align: center;
+    position: absolute; 
+    font-family: ArcadeClassic;
+}
+
+hr {
+    width: 100%;
+    border: solid #C74020;
+    top: 98px;
+    position: absolute;
+}
+
+p {
+    font-size: 25px;
+    font-family: Fipps-Regular;
+    text-align: center;
+    border: solid black;
+    background: whitesmoke;
+    border-width: 4px;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.myDiv {
+    background-color:#20A7C7;   
+    text-align: center;
+}
+
+
+
+.navbar {
+    width: 100%;
+    background-color:#20A7C7;
+    height:109px;
+    overflow: auto;
+    border:#C74020;
+    border-width: 4px;
+}
+
+.active {
+    background-color: #88D32C;
+    z-index: 3;
+}
+
+.navbar a {
+    float: left;
+    padding: 35px;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    z-index: 3;
+}
+  
+.navbar a:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #88D32C;
+}
+
+
+/**
+Start knapp
+**/
+.button {
+    background-color: #88D32C;
+    border: none;
+    color: white;
+    padding: 15px 42px;
+    bottom: 50px;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+    margin: 200px 0 0 680px;
+    cursor: pointer;
+    position: absolute;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+background-color: #ffffff;
+color: black;
+border: 0 solid #88D32C;
+}
+
+
+.kastutbutton {
+    background-color:#88D32C;
+    border: 2px solid #88D32C;
+    color: white;
+    padding: 10px 10px; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    transition-duration: 0.4s;
+}
+
+.kastutbutton:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 2px solid #88D32C;
+    
+}
+
+.reloadPage {
+    background-color:#88D32C;
+    border: none;
+    color: white;
+    padding: 15px 32px; 
+    top: 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 200px 0 0 680px;
+    cursor: pointer;
+    top: 50px;
+    right: 50px;
+    position: absolute;
+    transition-duration: 0.4s;
+}
+
+.reloadPage:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 2px solid #88D32C;
+}
+
+.posisjon0 {
+    top: 230px;
+    left: 230px;
+    position: absolute;
+}
+
+.posisjon1 {
+    top: 230px;
+    right: 710px;
+    position: absolute;
+}
+
+.posisjon1Knapp {
+    top: 350px;
+    left: 730px;
+    position: absolute;
+}
+
+.posisjon2 {
+    top: 230px;
+    right: 230px;
+    position: absolute;
+}
+
+.posisjon2Knapp {
+    top: 350px;
+    right: 260px;
+    position: absolute;
+}
+
+.posisjon3 {
+    bottom: 180px;
+    left: 230px;
+    position: absolute;
+}
+
+.posisjon3Knapp {
+    bottom: 150px;
+    left: 280px;
+    position: absolute;
+} 
+
+.posisjon4 {
+    bottom: 180px;
+    right: 700px;
+    position: absolute;
+}
+
+.posisjon4Knapp {
+    bottom: 150px;
+    right: 730px;
+    position: absolute;
+}
+
+.posisjon5 {
+    bottom: 180px;
+    right: 230px;
+    position: absolute;
+}
+
+.posisjon5Knapp {
+    bottom: 150px;
+    right: 260px;
+    position: absolute;
+}
+
+.animasjon {
+    font-size: 88px;
+    font-weight: normal;
+    bottom: 460px;
+    right: 0;
+    position: absolute;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    animation-name: loader;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    white-space: nowrap ;
+}
+
+@keyframes loader {
+
+    0% {
+        transform: translateY(0px);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      80%,
+      100% {
+        transform: translateY(0px);
+      }
+}
+
+
+.spillerTabell {
+    border: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  grid-gap: 180px;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 20px;
+   border: solid black;
+  font-size: 30px;
+  font-family: Fipps-Regular;
+}
+  
